@@ -235,12 +235,11 @@
                 <span class="center"></span>
                 <span class="right"></span>
             </div>
-            <p>This section offers great possibilities to compare plans, products, subscriptions or to just price your services in a clear and distinguish way.</p>
+            <p>你可以去官网下载组件包或提交自己的组件包。</p>
             <ul class="disc">
-                <li>Cross-browser</li>
-                <li>Fast-loading</li>
-                <li>Bookmarkable URLs</li>
-                <li>W3C Standards</li>
+                <li><a href="http://bundles.laravel.com/bundle/bob" target="_blank">代码生成器Bob</a></li>
+                <li><a href="http://bundles.laravel.com/bundle/anbu" target="_blank">前端调试和分析器Anbu</a></li>
+                <li><a href="http://bundles.laravel.com/bundle/swiftmailer" target="_blank">邮件发送SwiftMailer</a></li>
             </ul>
             <a href="http://bundles.laravel.com/" target="_blank" class="button featured animate">官网</a>
         </div><!-- .columns -->
@@ -256,12 +255,11 @@
                 <span class="center"></span>
                 <span class="right"></span>
             </div>
-            <p>This section offers great possibilities to compare plans, products, subscriptions or to just price your services in a clear and distinguish way.</p>
+            <p>当前最新的稳定版本</p>
             <ul class="disc">
-                <li>SEO Optimised</li>
-                <li>Browser History</li>
-                <li>Enterprise-level Website</li>
-                <li>Accessibility</li>
+                <li>修复Eloquent中to_array方法的bug</li>
+                <li>修复显示一般错误页面</li>
+                <li>从3.2.6升级的方法:覆盖laravel文件夹</li>
             </ul>
             <a href="http://laravel.com/download" target="_blank" class="button featured animate">下载</a>
         </div><!-- .columns -->
@@ -277,12 +275,11 @@
                 <span class="center"></span>
                 <span class="right"></span>
             </div>
-            <p>This section offers great possibilities to compare plans, products, subscriptions or to just price your services in a clear and distinguish way.</p>
+            <p>正在翻译中,敬请期待</p>
             <ul class="disc">
-                <li>Grid System Layout</li>
-                <li>Built for Performance</li>
-                <li>Focus on flow and conversions</li>
-                <li>Dynamic URL update</li>
+                <li>全官方手册翻译</li>
+                <li>官方API翻译</li>
+                <li>常用类查询图表</li>
             </ul>
             <a href="#contact" class="button featured animate">敬请期待</a>
         </div><!-- .columns -->
@@ -295,19 +292,19 @@
     <div class="container">
 
         <div class="sixteen columns titleset">
-            <h2 class="remove-bottom">Contact Us</h2>
+            <h2 class="remove-bottom">关于</h2>
             <h6 class="subheader">We'd love to hear from you!</h6>
         </div>
 
         <div class="two-thirds column">
             <h3>Talk to Us</h3>
-            <p>This form uses the newest HTML5 tags and has graceful fallback for old browsers (ie. the email field requires to be filled with an email). It is sent through Ajax using the jQuery.post() method - <strong>Simple and Effective</strong>.</p>
+            <p>如果你也喜欢laravel请联系我们</p>
 
             <form action="ajax.php" method="post" class="send-with-ajax">
 
                 <div class="row">
                     <div class="three columns alpha">
-                        <label for="form-name">Your Name <span>required</span></label>
+                        <label for="form-name">称呼<span>required</span></label>
                     </div>
                     <div class="seven columns omega">
                         <input type="text" name="name" id="form-name" placeholder="Your Name" required="required" />
@@ -316,7 +313,7 @@
 
                 <div class="row">
                     <div class="three columns alpha">
-                        <label for="form-email">Your Email <span>email required</span></label>
+                        <label for="form-email">邮箱<span>email required</span></label>
                     </div>
                     <div class="seven columns omega">
                         <input type="email" name="email" id="form-email" placeholder="your@email.com" required="required" />
@@ -325,7 +322,7 @@
 
                 <div class="row">
                     <div class="three columns alpha">
-                        <label for="form-message">Message</label>
+                        <label for="form-message">内容</label>
                     </div>
                     <div class="seven columns omega">
                         <textarea name="message" id="form-message"></textarea>
@@ -333,7 +330,7 @@
                 </div>
 
                 <div class="seven columns offset-by-three">
-                    <button type="submit">Submit Form</button>
+                    <button type="submit">提交</button>
                     <div class="ajax-response"></div>
                 </div>
 
@@ -348,17 +345,17 @@
                 5th Ave.<br />
                 New York, New York 10001<br />
                 (212) 222-1111<br />
-                <a href="mailto:contact@maddim.com">contact@maddim.com</a>
+                <a href="mailto:freezestart@gmail.com">freezestart@gmail.com</a>
             </p>
 
             <p><a class="targetblank" href="http://maps.google.com/maps?saddr=5th+Ave&amp;hl=en&amp;ll=40.754149,-73.980035&amp;spn=0.005445,0.009195&amp;sll=40.775992,-73.960218&amp;sspn=0.021774,0.036778&amp;geocode=FXfabQId_CSX-w&amp;vpsrc=6&amp;mra=mr&amp;t=m&amp;z=17">
                 <img src="img/map.jpg" alt="" class="scale-with-grid featured" />
             </a></p>
-            <h5>On The Web:</h5>
-            <a href="http://www.facebook.com/" class="targetblank imglink">
+            <h5>Links:</h5>
+            <a href="http://github.com/laravel" class="targetblank imglink">
                 <img src="img/empty.gif" alt="Facebook" title="Facebook" class="medium-icons icon-facebook" />
             </a>
-            <a href="http://www.twitter.com/" class="targetblank imglink">
+            <a href="http://twitter.com/laravelphp" class="targetblank imglink">
                 <img src="img/empty.gif" alt="Twitter" title="Twitter" class="medium-icons icon-twitter" />
             </a>
         </div>
