@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>Laravel: 独具匠心的WEB框架</title>
+	<title>Laravel 中文手册 - 巨匠级PHP开发框架</title>
 	<meta name="viewport" content="width=device-width">
 
 	{{ HTML::style(URL::$base.'/laravel/css/style.css') }}
@@ -13,7 +13,8 @@
 	<div class="wrapper">
 		<header>
 			<h1>Laravel</h1>
-			<h2>A Framework For Web Artisans</h2>
+			<h2>巨匠级PHP开发框架</h2>
+            <a href="http://laravel-cn.com"><-返回Laravel中国首页</a>
 
 			<p class="intro-text">
 			</p>
