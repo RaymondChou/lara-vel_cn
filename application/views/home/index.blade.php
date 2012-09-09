@@ -51,11 +51,11 @@
         <nav class="menu two-thirds column omega">
             <ul>
                 <li><a href="#home" class="active">首页<br /><span></span></a></li>
-                <li><a href="#features">特点<br /><span></span></a></li>
-                <li><a href="#pricing">下载<br /><span></span></a></li>
+                <li><a href="#special">特点<br /><span></span></a></li>
+                <li><a href="#download">下载<br /><span></span></a></li>
                 <li><a href="#contact">关于<br /><span></span></a></li>
                 <li><a href="docs">中文手册<br /><span></span></a></li>
-                <li><a href="#contact">中文社区<br /><span></span></a></li>
+                <li><a href="http://wiki.ledbk.com/?/topic/Laravel" target="_blank">中文社区<br /><span></span></a></li>
             </ul>
         </nav>
     </div><!-- .container -->
@@ -165,7 +165,7 @@
 </article>
 
 
-<article id="features" class="dark">
+<article id="special" class="dark">
     <div class="container">
         <div class="sixteen columns titleset">
             <h2 class="remove-bottom">特点</h2>
@@ -215,7 +215,7 @@
 </article>
 
 
-<article id="pricing">
+<article id="download">
     <div class="container">
 
         <div class="sixteen columns titleset">
