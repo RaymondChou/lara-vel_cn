@@ -175,20 +175,20 @@
         <div class="row">
             <div class="one-third column headset">
                 <img src="img/empty.gif" alt="" class="large-icons icon-dashboard" />
-                <h3>轻量级</h3>
-                <p>Techniques like CSS-sprites, asynchronous load and DOM events are intelligently used to improve page-load time and responsiveness.</p>
+                <h3>Application Logic</h3>
+                <p>在您的应用程序可以使用控制器，或直接进入路由的声明语法,类似Sinatra的框架，可以实现应用程序逻辑。 Laravel的设计与开发人员提供他们所需要的灵活性，方便创造从非常小的网站到大型的企业应用程序。</p>
             </div>
 
             <div class="one-third column headset">
                 <img src="img/empty.gif" alt="" class="large-icons icon-globe" />
-                <h3>路由Route</h3>
-                <p>Fully optimized for all browsers and mobile devices using progressive enhancement with graceful fallback. <strong>It's pixel perfect!</strong></p>
+                <h3>路由Reverse Route</h3>
+                <p>反向路由使您可以创建链接到已命名路由规则上。创建链接时使用路由的名称,Laravel会自动插入正确的URI。这可以让你改变你的路由,在稍后的时间Laravel将更新站点范围内的所有相关链接。</p>
             </div>
 
             <div class="one-third column headset">
                 <img src="img/empty.gif" alt="" class="large-icons icon-link" />
                 <h3>控制器Restful</h3>
-                <p>This enterprise-level website offers dynamic URL updates,  meaning bookmarkable URLs and a fully functional browser history.</p>
+                <p>Restful Controllers是一个可选的方式,分离你的请求逻辑。在一个登录的例子中,你控制器里get_login()的动作将显示登陆页,你控制器的post_login()动作会接受的登陆，验证，和或者重定向到其他页面。</p>
             </div>
         </div><!-- .row -->
 
@@ -196,20 +196,19 @@
             <div class="one-third column headset">
                 <img src="img/empty.gif" alt="" class="large-icons icon-grid" />
                 <h3>ELOQUENT ORM</h3>
-                <p>Based on a lightweight 960 CSS grid and using advanced Media Queries, this website offers a <strong>responsive grid down to mobile</strong>. Go ahead, resize this page!</p>
+                <p>ELOQUENT ORM是最先进的PHP ActiveRecord实现。ELOQUENT ORM拥有所有ActiveRecord的便利，你可以完全控制你的数据。ELOQUENT ORM支持Fluent query-builder的所有原生方法</p>
             </div>
 
             <div class="one-third column headset">
                 <img src="img/empty.gif" alt="" class="large-icons icon-cloud" />
                 <h3>扩展包Bundles</h3>
-                <p>Providing CDN-based components results in performance improvement for end-users,
-                    and the great part is that there's still a local fallback in case of CDN failure.</p>
+                <p>Bundles是Laravel的组件包系统。Laravel的Bundles已填充了相当多的功能，可以很容易地添加到您的应用程序。您可以Artisan命令行工具来自动安装它们。</p>
             </div>
 
             <div class="one-third column headset">
                 <img src="img/empty.gif" alt="" class="large-icons icon-cert" />
-                <h3>命令行Artisan</h3>
-                <p>Making use of the newest W3C standards, HTML5 structure and content-specific tags, we offer not only top accessibility but also natural SEO-oriented enhancements.</p>
+                <h3>高级视图View Composers</h3>
+                <p>View Composers是一个当视图加载后可以运行的代码块. 一个博客的侧导航视图将是一个很好的例子，其中包含一个随机博客文章列表。您的Composers将包含逻辑加载的博客文章，使所有你所要的进行加载，这一切都为你准备好了。这样可以使你不必再控制器加载的一组数据，只要从您的模型调用即可</p>
             </div>
         </div><!-- .row -->
     </div><!-- container -->
