@@ -1,6 +1,6 @@
 # Input & Cookies
 
-## Contents
+## 目录
 
 - [Input](#input)
 - [JSON Input](#json)
@@ -13,59 +13,59 @@
 <a name="input"></a>
 ## Input
 
-The **Input** class handles input that comes into your application via GET, POST, PUT, or DELETE requests. Here are some examples of how to access input data using the Input class:
+**Input**类会处理应用程序中来自GET、POST、PUT或者DELETE类型的请求。下面是一些用Input类来访问Input数据的例子：
 
-#### Retrieve a value from the input array:
+#### 获取input数组中指定的值：
 
 	$email = Input::get('email');
 
-> **Note:** The "get" method is used for all request types (GET, POST, PUT, and DELETE), not just GET requests.
+> **Note:** "get"方法适用于所有类型(GET,POST,PUT和DELETE)的请求，而不仅仅是指GET请求。
 
-#### Retrieve all input from the input array:
+#### 获取input数组中的所有数据：
 
 	$input = Input::get();
 
-#### Retrieve all input including the $_FILES array:
+#### 获取所有input数据，包括$_FILES数组：
 
 	$input = Input::all();
 
-By default, *null* will be returned if the input item does not exist. However, you may pass a different default value as a second parameter to the method:
+默认情况下，如果获取的input数据不存在时会返回*null*值。不过你可以通过给函数传递第二个参数来替代*null*值：
 
-#### Returning a default value if the requested input item doesn't exist:
+#### 当请求的数据不存在时返回一个默认值：
 
 	$name = Input::get('name', 'Fred');
 
-#### Using a Closure to return a default value:
+#### 把匿名函数作为默认返回值：
 
 	$name = Input::get('name', function() {return 'Fred';});
 
-#### Determining if the input contains a given item:
+#### 检查input数组中是否包含指定条目：
 
 	if (Input::has('name')) ...
 
-> **Note:** The "has" method will return *false* if the input item is an empty string.
+> **Note:** 当检查的数据不存在的时候"has"方法会返回*false*。
 
 <a name="json"></a>
 ## JSON Input
 
-When working with JavaScript MVC frameworks like Backbone.js, you will need to get the JSON posted by the application. To make your life easier, we've included the `Input::json` method:
+当使用像Backbone.js这样的JavaScript MVC框架时，你可能需要获取应用程序发送的JSON数据。Laravel框架提供了'Input::json'方法使你的工作更加轻松：
 
-#### Get JSON input to the application:
+#### 获取来自应用程序的JSON数据：
 
 	$data = Input::json();
 
 <a name="files"></a>
-## Files
+## 文件类
 
-#### Retrieving all items from the $_FILES array:
+#### 获取$_FILES数组：
 
 	$files = Input::file();
 
-#### Retrieving an item from the $_FILES array:
+#### 获取$_FILES数组中的指定数据：
 
 	$picture = Input::file('picture');
 
-#### Retrieving a specific item from a $_FILES array:
+#### 获取$_FILES数组中特定条目的size:
 
 	$size = Input::file('picture.size');
 
@@ -145,10 +145,4 @@ Sometimes you may wish to merge or replace the current input. Here's how:
 
 #### Replacing the entire input array with new data:
 
-	Input::replace(array('doctor' => 'Bones', 'captain' => 'Kirk'));
-
-## Clearing Input
-
-To clear all input data for the current request, you may use the `clear` method:
-
-	Input::clear();
+	Input::merge(array('doctor' => 'Bones', 'captain' => 'Kirk'));

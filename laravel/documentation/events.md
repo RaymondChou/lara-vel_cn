@@ -1,32 +1,32 @@
-# Events
+# 事件类
 
 ## Contents
 
-- [The Basics](#the-basics)
-- [Firing Events](#firing-events)
-- [Listening To Events](#listening-to-events)
-- [Queued Events](#queued-events)
-- [Laravel Events](#laravel-events)
+- [基础](#the-basics)
+- [触发事件](#firing-events)
+- [监听事件](#listening-to-events)
+- [事件队列](#queued-events)
+- [Laravel默认事件](#laravel-events)
 
 <a name="the-basics"></a>
 ## The Basics
 
-Events can provide a great away to build de-coupled applications, and allow plug-ins to tap into the core of your application without modifying its code.
+事件类为建立耦合应用提供了极大的灵活性，它允许以插件的形式嵌入应用程序的核心代码中，而无需修改程序代码。
 
 <a name="firing-events"></a>
-## Firing Events
+## 触发事件
 
-To fire an event, just tell the **Event** class the name of the event you want to fire:
+需要触发事件时，只要将事件名传递给**Event**类：
 
-#### Firing an event:
+#### 触发‘loaded’事件:
 
 	$responses = Event::fire('loaded');
 
-Notice that we assigned the result of the **fire** method to a variable. This method will return an array containing the responses of all the event's listeners.
+在例子中我们把**fire**方法的返回结果赋值给了$responses变量。**fire**方法可以同时触发多个事件，并返回一个包含所有事件返回结果的数组。
 
-Sometimes you may want to fire an event, but just get the first response. Here's how:
+有时候，我们在触发事件后只想获取第一个事件的返回结果，可以用first方法：
 
-#### Firing an event and retrieving the first response:
+#### 触发一个事件，并返回第一个结果:
 
 	$response = Event::first('loaded');
 

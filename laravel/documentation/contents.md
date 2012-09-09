@@ -1,14 +1,14 @@
-### General
-- [Laravel Overview](/docs/home)
+### 简介
+- [Laravel 概述](/docs/home)
 - [Change Log](/docs/changes)
-- [Installation & Setup](/docs/install)
+- [安装与设置](/docs/install)
 	- [Requirements](/docs/install#requirements)
 	- [Installation](/docs/install#installation)
 	- [Server Configuration](/docs/install#server-configuration)
 	- [Basic Configuration](/docs/install#basic-configuration)
 	- [Environments](/docs/install#environments)
 	- [Cleaner URLs](/docs/install#cleaner-urls)
-- [Routing](/docs/routing)
+- [Routing路由](/docs/routing)
 	- [The Basics](/docs/routing#the-basics)
 	- [Wildcards](/docs/routing#wildcards)
 	- [The 404 Event](/docs/routing#the-404-event)
@@ -21,7 +21,7 @@
 	- [Bundle Routes](/docs/routing#bundle-routes)
 	- [Controller Routing](/docs/routing#controller-routing)
 	- [CLI Route Testing](/docs/routing#cli-route-testing)
-- [Controllers](/docs/controllers)
+- [Controllers控制器](/docs/controllers)
 	- [The Basics](/docs/controllers#the-basics)
 	- [Controller Routing](/docs/controllers#controller-routing)
 	- [Bundle Controllers](/docs/controllers#bundle-controllers)
@@ -30,8 +30,8 @@
 	- [RESTful Controllers](/docs/controllers#restful-controllers)
 	- [Dependency Injection](/docs/controllers#dependency-injection)
 	- [Controller Factory](/docs/controllers#controller-factory)
-- [Models & Libraries](/docs/models)
-- [Views & Responses](/docs/views)
+- [Models & Libraries模型和类库](/docs/models)
+- [Views & Responses视图和响应](/docs/views)
 	- [The Basics](/docs/views#basics)
 	- [Binding Data To Views](/docs/views#binding-data-to-views)
 	- [Nesting Views](/docs/views#nesting-views)
@@ -46,13 +46,13 @@
 	- [Pagination](/docs/views/pagination)
 	- [Building HTML](/docs/views/html)
 	- [Building Forms](/docs/views/forms)
-- [Input & Cookies](/docs/input)
+- [Input & Cookies输入和Cookies](/docs/input)
 	- [Input](/docs/input#input)
 	- [Files](/docs/input#files)
 	- [Old Input](/docs/input#old-input)
 	- [Redirecting With Old Input](/docs/input#redirecting-with-old-input)
 	- [Cookies](/docs/input#cookies)
-- [Bundles](/docs/bundles)
+- [Bundles扩展包](/docs/bundles)
 	- [The Basics](/docs/bundles#the-basics)
 	- [Creating Bundles](/docs/bundles#creating-bundles)
 	- [Registering Bundles](/docs/bundles#registering-bundles)
@@ -63,23 +63,23 @@
 	- [Bundle Assets](/docs/bundles#bundle-assets)
 	- [Installing Bundles](/docs/bundles#installing-bundles)
 	- [Upgrading Bundles](/docs/bundles#upgrading-bundles)
-- [Class Auto Loading](/docs/loading)
-- [Errors & Logging](/docs/logging)
-- [Runtime Configuration](/docs/config)
-- [Examining Requests](/docs/requests)
+- [Class Auto Loading自动加载类](/docs/loading)
+- [Errors & Logging错误和日志](/docs/logging)
+- [Runtime Configuration运行设置](/docs/config)
+- [Examining Requests请求](/docs/requests)
 - [Generating URLs](/docs/urls)
-- [Events](/docs/events)
-- [Validation](/docs/validation)
-- [Working With Files](/docs/files)
-- [Working With Strings](/docs/strings)
-- [Localization](/docs/localization)
-- [Encryption](/docs/encryption)
+- [Events事件](/docs/events)
+- [Validation验证](/docs/validation)
+- [Working With Files文件类](/docs/files)
+- [Working With Strings字符串类](/docs/strings)
+- [Localization本地化](/docs/localization)
+- [Encryption加密类](/docs/encryption)
 - [IoC Container](/docs/ioc)
-- [Unit Testing](/docs/testing)
+- [Unit Testing单元测试](/docs/testing)
 
-### Database
+### Database数据库
 
-- [Configuration](/docs/database/config)
+- [Configuration配置](/docs/database/config)
 - [Raw Queries](/docs/database/raw)
 - [Fluent Query Builder](/docs/database/fluent)
 - [Eloquent ORM](/docs/database/eloquent)
@@ -87,22 +87,22 @@
 - [Migrations](/docs/database/migrations)
 - [Redis](/docs/database/redis)
 
-### Caching
+### Caching缓存
 
 - [Configuration](/docs/cache/config)
 - [Usage](/docs/cache/usage)
 
-### Sessions
+### Sessions会话
 
 - [Configuration](/docs/session/config)
 - [Usage](/docs/session/usage)
 
-### Authentication
+### Authentication权限控制
 
 - [Configuration](/docs/auth/config)
 - [Usage](/docs/auth/usage)
 
-### Artisan CLI
+### Artisan CLI命令行
 
 - [Tasks](/docs/artisan/tasks)
 	- [The Basics](/docs/artisan/tasks#the-basics)
@@ -111,7 +111,7 @@
 	- [CLI Options](/docs/artisan/tasks#cli-options)
 - [Commands](/docs/artisan/commands)
 
-### Contributing
+### Contributing贡献
 
 - [Laravel on GitHub](/docs/contrib/github)
 - [Command Line](/docs/contrib/command-line)

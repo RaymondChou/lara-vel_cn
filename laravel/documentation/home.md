@@ -1,19 +1,19 @@
-# Laravel Documentation
+# Laravel 中文文档
 
-- [The Basics](#the-basics)
-- [Who Will Enjoy Laravel?](#who-will-enjoy-laravel)
-- [What Makes Laravel Different?](#laravel-is-different)
-- [Application Structure](#application-structure)
-- [Laravel's Community](#laravel-community)
-- [License Information](#laravel-license)
+- [基础](#the-basics)
+- [Laravel适合谁?](#who-will-enjoy-laravel)
+- [Laravel有什么不同?](#laravel-is-different)
+- [应用程序结构](#application-structure)
+- [Laravel社区](#laravel-community)
+- [许可证](#laravel-license)
 
 <a name="the-basics"></a>
-## The Basics
+## 基础
 
 Welcome to the Laravel documentation. These documents were designed to function both as a getting-started guide and as a feature reference. Even though you may jump into any section and start learning, we recommend reading the documentation in order as it allows us to progressively establish concepts that will be used in later documents. 
 
 <a name="who-will-enjoy-laravel"></a>
-## Who Will Enjoy Laravel?
+## Laravel适合谁?
 
 Laravel is a powerful framework that emphasizes flexibility and expressiveness. Users new to Laravel will enjoy the same ease of development that is found in the most popular and lightweight PHP frameworks. More experienced users will appreciate the opportunity to modularize their code in ways that are not possible with other frameworks. Laravel's flexibility will allow your organization to update and mold the application over time as is needed and its expressiveness will allow you and your team to develop code that is both concise and easily read.
 
@@ -38,7 +38,7 @@ There are many ways in which Laravel differentiates itself from other frameworks
 These are just a few ways in which Laravel differentiates itself from other PHP frameworks.  All of these features and many more are discussed thoroughly in this documentation.
 
 <a name="application-structure"></a>
-## Application Structure
+## 应用程序结构
 
 Laravel's directory structure is designed to be familiar to users of other popular PHP frameworks. Web applications of any shape or size can easily be created using this structure similarly to the way that they would be created in other frameworks.
 
@@ -47,13 +47,13 @@ However due to Laravel's unique architecture, it is possible for developers to c
 Throughout the documentation we'll specify the default locations for declarations where appropriate.
 
 <a name="laravel-community"></a>
-## Laravel's Community
+## Laravel社区
 
 Laravel is lucky to be supported by rapidly growing, friendly and enthusiastic community. The [Laravel Forums](http://forums.laravel.com) are a great place to find help, make a suggestion, or just see what other people are saying.
 
 Many of us hang out every day in the #laravel IRC channel on FreeNode. [Here's a forum post explaining how you can join us.](http://forums.laravel.com/viewtopic.php?id=671) Hanging out in the IRC channel is a really great way to learn more about web-development using Laravel. You're welcome to ask questions, answer other people's questions, or just hang out and learn from other people's questions being answered. We love Laravel and would love to talk to you about it, so don't be a stranger!
 
 <a name="laravel-license"></a>
-## License Information
+## 许可证
 
 Laravel is open-sourced software licensed under the [MIT License](http://www.opensource.org/licenses/mit-license.php).
