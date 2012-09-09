@@ -375,6 +375,9 @@
 <script src="js/jquery.flexslider-v1.8.min.js"></script>
 <script src="js/jquery.ba-hashchange-v1.3.min.js"></script>
 <script src="js/main-r6.js"></script>
-
+<script type="text/javascript">
+    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fcbd85e238f6c8a54c657bdd653d81015' type='text/javascript'%3E%3C/script%3E"));
+</script>
 </body>
 </html>
