@@ -169,15 +169,15 @@ Eloquent使得定义关系与检索关系模型变得简单且直观，Laravel�
 
 	SELECT * FROM "phones" WHERE "user_id" = 1
 
-Note that Eloquent assumes the foreign key of the relationship will be **user\_id**. Most foreign keys will follow this **model\_id** convention; however, if you want to use a different column name as the foreign key, just pass it in the second parameter to the method:
+需要注意的是Eloquent假设此关系的外键是**user\_id**. 大多数外键建立的惯例是**model\_id**; 无论如何,你想要使用一个不同的列名来作为外键,只要将他当做第二个参数传递給方法:
 
 	return $this->has_one('Phone', 'my_foreign_key');
 
-Want to just retrieve the user's phone without calling the first method? No problem. Just use the **dynamic phone property**. Eloquent will automatically load the relationship for you, and is even smart enough to know whether to call the get (for one-to-many relationships) or first (for one-to-one relationships) method:
+想要只检索用户的手机而不使用first方法?没问题,只要使用**dynamic phone property**. Eloquent将自动的加载这个关系,并且足够智能的去调用get方法(一对多关系) 或 first方法 (一对一关系):
 
 	$phone = User::find(1)->phone;
 
-What if you need to retrieve a phone's user? Since the foreign key (**user\_id**) is on the phones table, we should describe this relationship using the **belongs\_to** method. It makes sense, right? Phones belong to users. When using the **belongs\_to** method, the name of the relationship method should correspond to the foreign key (sans the **\_id**). Since the foreign key is **user\_id**, your relationship method should be named **user**:
+万一你需要检索一个手机的用户?外键**user\_id**在phones表中,我们必须用**belongs\_to**方法描述这个关系. 这样很明白对吧?手机属于用户.当使用 **belongs\_to**方法,关系方法的名称必须对应外键(sans the **\_id**). 如果外键是**user\_id**, 你的关系方法必须是**user**:
 
 	class Phone extends Eloquent {
 
@@ -188,7 +188,7 @@ What if you need to retrieve a phone's user? Since the foreign key (**user\_id**
 
 	}
 
-Great! You can now access a User model through a Phone model using either your relationship method or dynamic property:
+太棒了!现在可以通过动态属性来让Phone模型和User模型互相连接:
 
 	echo Phone::find(1)->user()->first()->email;
 
