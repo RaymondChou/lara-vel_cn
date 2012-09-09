@@ -77,7 +77,7 @@
                     <p class="hide-for-mobile">开发应该是一个创造性的过程,
                         让你你享受，而不是让你很痛苦的事情。Laravel让你享受新鲜的空气。
                     </p>
-                    <a href="#features" class="button call-to-action animate" style="color: #FBCC62">下载最新版 3.2.7</a>
+                    <a href="http://laravel.com/download" target="_blank" class="button call-to-action animate" style="color: #FBCC62">下载最新版 3.2.7</a>
                 </div>
             </div>
 
