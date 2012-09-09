@@ -866,7 +866,7 @@ article .row:last-of-type {
 	display: none; /* display:block; in the Media-Queries */
 }
 .dark {
-	background: #212121 url("../images/black_paper.jpg") repeat;
+	background: #212121 url("../img/black_paper.jpg") repeat;
 	color: #dbdbdb;
 }
 
@@ -908,7 +908,7 @@ article .row:last-of-type {
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
 	box-shadow: 1px 1px 3px 0px #fff;
-	background: #212121 url("../images/black_paper.jpg") repeat;
+	background: #212121 url("../img/black_paper.jpg") repeat;
 }
 
 
@@ -1036,7 +1036,7 @@ a.imglink {
     z-index: -100;
 }	
 .bottom-gradient .left {
-	background:no-repeat url(../images/combined_gradient.png) 0 0;
+	background:no-repeat url(../img/combined_gradient.png) 0 0;
 	background:-webkit-radial-gradient(bottom right,circle,rgba(0,0,0,0.06),rgba(0,0,0,0) 80px);
 	background:-moz-radial-gradient(bottom right,rgba(0,0,0,0.06),rgba(0,0,0,0) 80px);
 	width:80px;
@@ -1044,7 +1044,7 @@ a.imglink {
 }
 
 .bottom-gradient .center {
-	background:no-repeat url(../images/combined_gradient.png) -114px 0;
+	background:no-repeat url(../img/combined_gradient.png) -114px 0;
 	background:-webkit-radial-gradient(bottom left,circle,rgba(0,0,0,0.06),rgba(0,0,0,0) 80px);
 	background:-moz-radial-gradient(bottom left,rgba(0,0,0,0.06),rgba(0,0,0,0) 80px);
 	width:80px;
@@ -1056,7 +1056,7 @@ a.imglink {
 	margin-left:80px;
 	margin-right:80px;
 	top:-80px;
-	background:url(../images/gradient.png);
+	background:url(../img/gradient.png);
 	background:-webkit-linear-gradient(bottom,rgba(0,0,0,0.06),rgba(0,0,0,0) 80px);
 	background:-moz-linear-gradient(bottom,rgba(0,0,0,0.06),rgba(0,0,0,0) 80px);
 }
