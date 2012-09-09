@@ -143,12 +143,12 @@ Eloquent使得定义关系与检索关系模型变得简单且直观，Laravel�
 - [一对多](#one-to-many)
 - [多对多](#many-to-many)
 
-To define a relationship on an Eloquent model, you simply create a method that returns the result of either the **has\_one**, **has\_many**, **belongs\_to**, or **has\_many\_and\_belongs\_to** method. Let's examine each one in detail.
+你可以建立一个方法来简单的返回**has\_one**, **has\_many**, **belongs\_to**, **has\_many\_and\_belongs\_to**方法的结果,用于再Eloquent模型中定义一个关系. 下面来介绍每一个:
 
 <a name="one-to-one"></a>
-### One-To-One
+### 一对一
 
-A one-to-one relationship is the most basic form of relationship. For example, let's pretend a user has one phone. Simply describe this relationship to Eloquent:
+一对一关系是关系中最基本的.例如,我们假设一个用户有一个手机.在Eloquent中使用一段简单的代码来表述这个关系:
 
 	class User extends Eloquent {
 
@@ -159,7 +159,7 @@ A one-to-one relationship is the most basic form of relationship. For example, l
 
 	}
 
-Notice that the name of the related model is passed to the **has_one** method. You can now retrieve the phone of a user through the **phone** method:
+注意相关模型的名称已经传递给了 **has_one** 方法. 你可以使用**phone**方法来检索一个用户的手机:
 
 	$phone = User::find(1)->phone()->first();
 
