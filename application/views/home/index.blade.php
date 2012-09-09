@@ -86,7 +86,7 @@
                     <ul class="slides notloaded">
                         <li><img src="img/slides/silde1.jpg" alt="" /></li>
                         <li><img src="img/slides/comu.jpg" alt="" /></li>
-                        <li><img src="img/slides/html5.jpg" alt="" /></li>
+                        <li><img src="img/slides/slide2.jpg" alt="" /></li>
                     </ul>
                 </div>
             </div>
@@ -243,7 +243,7 @@
                 <li>Bookmarkable URLs</li>
                 <li>W3C Standards</li>
             </ul>
-            <a href="#contact" class="button featured animate">官网</a>
+            <a href="http://bundles.laravel.com/" target="_blank" class="button featured animate">官网</a>
         </div><!-- .columns -->
 
         <div class="one-third column box light featured">
@@ -264,7 +264,7 @@
                 <li>Enterprise-level Website</li>
                 <li>Accessibility</li>
             </ul>
-            <a href="#contact" class="button featured animate">下载</a>
+            <a href="http://laravel.com/download" target="_blank" class="button featured animate">下载</a>
         </div><!-- .columns -->
 
         <div class="one-third column">
