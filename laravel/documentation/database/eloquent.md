@@ -2,12 +2,12 @@
 
 ## Contents
 
-- [The Basics](#the-basics)
-- [Conventions](#conventions)
-- [Retrieving Models](#get)
-- [Aggregates](#aggregates)
-- [Inserting & Updating Models](#save)
-- [Relationships](#relationships)
+- [基础](#the-basics)
+- [预定](#conventions)
+- [检索模型](#get)
+- [统计](#aggregates)
+- [插入与更新模型](#save)
+- [关系](#relationships)
 - [Inserting Related Models](#inserting-related-models)
 - [Working With Intermediate Tables](#intermediate-tables)
 - [Eager Loading](#eager)
