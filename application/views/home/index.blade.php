@@ -340,11 +340,11 @@
 
         <div class="one-third column">
             <h3>Find Us</h3>
-            <h5>Our Offices:</h5>
+            <h5>Laravel中国社区:</h5>
             <p>
-                5th Ave.<br />
-                New York, New York 10001<br />
-                (212) 222-1111<br />
+                Builder: Raymond<br />
+                <a href="http://www.ledbk.com">ledbk.com</a> <a href="http://www.iiseeuu.com">iiseeuu.com</a><br />
+                QQ群:262244299<br />
                 <a href="mailto:freezestart@gmail.com">freezestart@gmail.com</a>
             </p>
 
