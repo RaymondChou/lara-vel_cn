@@ -207,7 +207,7 @@
 
             <div class="one-third column headset">
                 <img src="img/empty.gif" alt="" class="large-icons icon-cert" />
-                <h3>高级视图View Composers</h3>
+                <h3>View Composers</h3>
                 <p>View Composers是一个当视图加载后可以运行的代码块. 一个博客的侧导航视图将是一个很好的例子，其中包含一个随机博客文章列表。您的Composers将包含逻辑加载的博客文章，使所有你所要的进行加载，这一切都为你准备好了。这样可以使你不必再控制器加载的一组数据，只要从您的模型调用即可</p>
             </div>
         </div><!-- .row -->
