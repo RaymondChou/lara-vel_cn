@@ -85,7 +85,7 @@
                 <div class="flexslider">
                     <ul class="slides notloaded">
                         <li><img src="img/slides/performance.jpg" alt="" /></li>
-                        <li><img src="img/slides/crossbrowser.jpg" alt="" /></li>
+                        <li><img src="img/slides/comu.jpg" alt="" /></li>
                         <li><img src="img/slides/html5.jpg" alt="" /></li>
                     </ul>
                 </div>
