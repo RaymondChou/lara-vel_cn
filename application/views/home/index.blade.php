@@ -150,7 +150,7 @@
                         Laravel 有一个非常棒的的社区支持。Laravel代码本身的表现力和良好的文档使PHP程序编写令人愉快。
                     </li>
                 </ul>
-                <p class="add-top">The tabs are built from two list elements, take a look at the source code, it's really simple!</p>
+                <p class="add-top">Laravel 利用了很多PHP 5.3版才具备强大的新特性. 所以, PHP 5.3版本是必须的.</p>
             </div><!-- .columns -->
 
             <div class="one-third column">
