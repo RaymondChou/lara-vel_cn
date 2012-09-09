@@ -32,24 +32,9 @@
 |
 */
 
-//Route::get('/', function()
-//{
-//	return View::make('home.index');
-//});
-
-Route::get('/', array('as'=>'na', function()
-    {
-        return "Hello World!";
-    }
-));
 
 Route::controller(Controller::detect());
 
-Route::get('hello/(:num)/(:num)', function($name,$id)
-    {
-        return "Welcome, $name.$id";
-    }
-);
 
 /*
 |--------------------------------------------------------------------------
