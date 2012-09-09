@@ -163,7 +163,7 @@ Eloquent使得定义关系与检索关系模型变得简单且直观，Laravel�
 
 	$phone = User::find(1)->phone()->first();
 
-Let's examine the SQL performed by this statement. Two queries will be performed: one to retrieve the user and one to retrieve the user's phone:
+让我们来看看这个语句执行的SQL. 两条查询将被执行:一条是检索用户,一条是检索这个用户的手机:
 
 	SELECT * FROM "users" WHERE "id" = 1
 
