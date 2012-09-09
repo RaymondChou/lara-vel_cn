@@ -20,23 +20,23 @@
 <a name="the-basics"></a>
 ## The Basics
 
-An ORM is an [object-relational mapper](http://en.wikipedia.org/wiki/Object-relational_mapping), and Laravel has one that you will absolutely love to use. It is named "Eloquent" because it allows you to work with your database objects and relationships using an eloquent and expressive syntax. In general, you will define one Eloquent model for each table in your database. To get started, let's define a simple model:
+ORM是[对象关系映射](http://en.wikipedia.org/wiki/Object-relational_mapping), Laravel的ORM你肯定会喜欢. 叫做"Eloquent", 因为它使你处理数据库对象和关系时的语法变得宏伟和具有表达性. 通常你需要为每张表定义一个Eloquent模型.下面简单写了一个例子:
 
 	class User extends Eloquent {}
 
-Nice! Notice that our model extends the **Eloquent** class. This class will provide all of the functionality you need to start working eloquently with your database.
+Nice! 注意你的模型继承的是 **Eloquent** 类. 这个类将会提供你使用Eloquent所需要的操作.
 
-> **Note:** Typically, Eloquent models live in the **application/models** directory.
+> **注意:** 通常情况下, Eloquent模型需要放在 **application/models** 文件夹下.
 
 <a name="conventions"></a>
-## Conventions
+## 约定
 
-Eloquent makes a few basic assumptions about your database structure:
+Eloquent对你的数据库结构有一些基本要求:
 
-- Each table should have a primary key named **id**.
-- Each table name should be the plural form of its corresponding model name.
+- 每张表必须有一个名称为 **id** 的主键 (为毛!译者注).
+- 模型对应的每张表名必须是复数.
 
-Sometimes you may wish to use a table name other than the plural form of your model. No problem. Just add a static **table** property your model:
+有时你不想被这些限制,当然也可以.只要正确的添加一个静态变量 **table** 在你的模型中:
 
 	class User extends Eloquent {
 
@@ -45,19 +45,19 @@ Sometimes you may wish to use a table name other than the plural form of your mo
 	}
 
 <a name="get"></a>
-## Retrieving Models
+## 检索模型
 
-Retrieving models using Eloquent is refreshingly simple. The most basic way to retrieve an Eloquent model is the static **find** method. This method will return a single model by primary key with properties corresponding to each column on the table:
+检索模型使用Eloquent将是简单且耳目一新的. 最常用的Eloquent模型方法是静态 **find** 方法. 这个方法将检索主键并返回包含每一列的单条数据:
 
 	$user = User::find(1);
 
 	echo $user->email;
 
-The find method will execute a query that looks something like this:
+find方法将生成一个类似这样的语句:
 
 	SELECT * FROM "users" WHERE "id" = 1
 
-Need to retrieve an entire table? Just use the static **all** method:
+需要检索整个表?使用静态方法 **all** :
 
 	$users = User::all();
 
@@ -66,7 +66,7 @@ Need to retrieve an entire table? Just use the static **all** method:
 	     echo $user->email;
 	}
 
-Of course, retrieving an entire table isn't very helpful. Thankfully, **every method that is available through the fluent query builder is available in Eloquent**. Just begin querying your model with a static call to one of the [query builder](/docs/database/fluent) methods, and execute the query using the **get** or **first** method. The get method will return an array of models, while the first method will return a single model:
+当然,检索整张表不是很有用. 谢天谢地, **每个fluent query builder的方法都可以在Eloquent中使用**. 使用[query builder](/docs/database/fluent)里的静态方法查询你的模型,然后执行 **get** 或 **first** 方法. get方法将会返回一个数组, first方法将会返回单条:
 
 	$user = User::where('email', '=', $email)->first();
 
@@ -76,12 +76,12 @@ Of course, retrieving an entire table isn't very helpful. Thankfully, **every me
 
 	$users = User::order_by('votes', 'desc')->take(10)->get();
 
-> **Note:** If no results are found, the **first** method will return NULL. The **all** and **get** methods return an empty array.
+> **注意:** 如果没找到结果,**first** 方法将会返回NULL. **all** 和 **get**将返回空数组.
 
 <a name="aggregates"></a>
-## Aggregates
+## 统计
 
-Need to get a **MIN**, **MAX**, **AVG**, **SUM**, or **COUNT** value? Just pass the column to the appropriate method:
+使用**MIN**, **MAX**, **AVG**, **SUM**, **COUNT** 方法:
 
 	$min = User::min('id');
 
@@ -93,14 +93,14 @@ Need to get a **MIN**, **MAX**, **AVG**, **SUM**, or **COUNT** value? Just pass 
 
 	$count = User::count();
 
-Of course, you may wish to limit the query using a WHERE clause first:
+当然,你可能想要用where子句限制查询的条数:
 
 	$count = User::where('id', '>', 10)->count();
 
 <a name="save"></a>
-## Inserting & Updating Models
+## 插入和更新模型
 
-Inserting Eloquent models into your tables couldn't be easier. First, instantiate a new model. Second, set its properties. Third, call the **save** method:
+Eloquent的插入模型,让你查表变得不能再简单.首先,实例化一个新的模型.然后,设置他的属性.最后调用**save**方法:(这不是rails吗! 译者注)
 
 	$user = new User;
 
@@ -109,11 +109,11 @@ Inserting Eloquent models into your tables couldn't be easier. First, instantiat
 
 	$user->save();
 
-Alternatively, you may use the **create** method, which will insert a new record into the database and return the model instance for the newly inserted record, or **false** if the insert failed.
+另外,当你需要插入一条新的记录进入数据库并且返回一个新的记录实例(当插入失败将返回**false**),你可以使用**create**方法.
 
 	$user = User::create(array('email' => 'example@gmail.com'));
 
-Updating models is just as simple. Instead of instantiating a new model, retrieve one from your database. Then, set its properties and save:
+更新模型一样简单. 检索你需要更新的一条记录,然后设置属性并保存:
 
 	$user = User::find(1);
 
@@ -122,7 +122,7 @@ Updating models is just as simple. Instead of instantiating a new model, retriev
 
 	$user->save();
 
-Need to maintain creation and update timestamps on your database records? With Eloquent, you don't have to worry about it. Just add a static **timestamps** property to your model:
+需要为你的数据库记录建立一个更新时间戳? 用Eloquent, 你不需要担心这个. 只需新建一个静态变量**timestamps**在你的模型中:
 
 	class User extends Eloquent {
 
@@ -130,18 +130,18 @@ Need to maintain creation and update timestamps on your database records? With E
 
 	}
 
-Next, add **created_at** and **updated_at** date columns to your table. Now, whenever you save the model, the creation and update timestamps will be set automatically. You're welcome.
+然后,在你的表中添加**created_at**和**updated_at** date类型的列. 现在,每当你保存模型,时间戳都将自动更新.不用谢.
 
-> **Note:** You can change the default timezone of your application in the **application/config/application.php** file.
+> **注意:** 你可以在**application/config/application.php**文件中改变默认的timezone时区.
 
 <a name="relationships"></a>
-## Relationships
+## 关系
+你的数据库表应该与另一个相连，除非你写错了。例如，一个指令应该归属于一个用户，一个文章应该有多个回复,
+Eloquent使得定义关系与检索关系模型变得简单且直观，Laravel支持3种关系:
 
-Unless you're doing it wrong, your database tables are probably related to one another. For instance, an order may belong to a user. Or, a post may have many comments. Eloquent makes defining relationships and retrieving related models simple and intuitive. Laravel supports three types of relationships:
-
-- [One-To-One](#one-to-one)
-- [One-To-Many](#one-to-many)
-- [Many-To-Many](#many-to-many)
+- [一对一](#one-to-one)
+- [一对多](#one-to-many)
+- [多对多](#many-to-many)
 
 To define a relationship on an Eloquent model, you simply create a method that returns the result of either the **has\_one**, **has\_many**, **belongs\_to**, or **has\_many\_and\_belongs\_to** method. Let's examine each one in detail.
 
