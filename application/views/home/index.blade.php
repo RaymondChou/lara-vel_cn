@@ -298,7 +298,7 @@
 
         <div class="two-thirds column">
             <h3>Talk to Us</h3>
-            <p>如果你也喜欢laravel请联系我们</p>
+            <p><a href="https://me.alipay.com/laravel" target="_blank">捐赠我们</a></p>
 
             <form action="ajax.php" method="post" class="send-with-ajax">
 
