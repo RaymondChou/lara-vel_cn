@@ -2,10 +2,10 @@
 
 ## Contents
 
-- [The Basics](#the-basics)
-- [Wildcards](#wildcards)
-- [The 404 Event](#the-404-event)
-- [Filters](#filters)
+- [基础](#the-basics)
+- [通配符](#wildcards)
+- [404事件](#the-404-event)
+- [过滤器](#filters)
 - [Pattern Filters](#pattern-filters)
 - [Global Filters](#global-filters)
 - [Route Groups](#route-groups)
@@ -16,9 +16,9 @@
 - [CLI Route Testing](#cli-route-testing)
 
 <a name="the-basics"></a>
-## The Basics
+## 基础
 
-Laravel uses the latest features of PHP 5.3 to make routing simple and expressive. It's important that building everything from APIs to complex web applications is as easy as possible. Routes are typically defined in **application/routes.php**.
+为了使路由更简单、更具表达力，Laravel使用了PHP 5.3的一些最新特性。尽可能使编写各种应用都变得都很简单，Laravel认为这很重要，不管是简单的API还是复杂的应用。路由可以在文件**application/routes.php**中找到。
 
 Unlike many other frameworks with Laravel it's possible to embed application logic in two ways. While controllers are the most common way to implement application logic it's also possible to embed your logic directly into routes. This is **especially** nice for small sites that contain only a few pages as you don't have to create a bunch of controllers just to expose half a dozen methods or put a handful of unrelated methods into the same controller and then have to manually designate routes that point to them.
 
