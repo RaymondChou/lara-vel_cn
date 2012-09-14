@@ -10,26 +10,26 @@
 <a name="the-basics"></a>
 ## 基础
 
-Welcome to the Laravel documentation. These documents were designed to function both as a getting-started guide and as a feature reference. Even though you may jump into any section and start learning, we recommend reading the documentation in order as it allows us to progressively establish concepts that will be used in later documents. 
+欢迎阅读Laravel中文文档. 文档被设计为一种新手指引,也可作为一个功能性的参考。 可能你跳进任何部分，并开始学习，但我们还是建议您阅读文档，因为它允许我们逐步建立在以后的文件中使用的概念。
 
 <a name="who-will-enjoy-laravel"></a>
 ## Laravel适合谁?
 
-Laravel is a powerful framework that emphasizes flexibility and expressiveness. Users new to Laravel will enjoy the same ease of development that is found in the most popular and lightweight PHP frameworks. More experienced users will appreciate the opportunity to modularize their code in ways that are not possible with other frameworks. Laravel's flexibility will allow your organization to update and mold the application over time as is needed and its expressiveness will allow you and your team to develop code that is both concise and easily read.
+Laravel是一个功能强大的框架，强调灵活性和表现力。新的Laravel的用户将享受相同的易用性的开发，Laravel是最流行的轻量级PHP框架。 有经验的用户会很高兴有机会找到他们的代码模块化的方式，是其他框架中没有的。 Laravel的灵活性，将允许您组织更新和模块化你的程序，需要随着时间的推移，其表现将让您和您的团队开发出既简洁又易读的代码。
 
 
 <a name="laravel-is-different"></a>
-## What Makes Laravel Different?
+## Laravel有什么不同?
 
-There are many ways in which Laravel differentiates itself from other frameworks. Here are a few examples that we think make good bullet points:
+Laravel和其他框架相比有很多不同. 这里列举一些我们认为比较好的几点:
 
-- **Bundles** are Laravel's modular packaging system. [The Laravel Bundle Repository](http://bundles.laravel.com/) is already populated with quite a few features that can be easily added to your application. You can either download a bundle repository to your bundles directory or use the "Artisan" command-line tool to automatically install them.
-- **The Eloquent ORM** is the most advanced PHP ActiveRecord implementation available.  With the capacity to easily apply constraints to both relationships and nested eager-loading you'll have complete control over your data with all of the conveniences of ActiveRecord.  Eloquent natively supports all of the methods from Laravel's Fluent query-builder.
-- **Application Logic** can be implemented within your application either using controllers (which many web-developers are already familiar with) or directly into route declarations using syntax similar to the Sinatra framework. Laravel is designed with the philosophy of giving a developer the flexibility that they need to create everything from very small sites to massive enterprise applications.
-- **Reverse Routing** allows you to create links to named routes. When creating links just use the route's name and Laravel will automatically insert the correct URI.  This allows you to change your routes at a later time and Laravel will update all of the relevant links site-wide.
-- **Restful Controllers** are an optional way to separate your GET and POST request logic. In a login example your controller's get_login() action would serve up the form and your controller's post_login() action would accept the posted form, validate, and either redirect to the login form with an error message or redirect your user to their dashboard.
+- **Bundles扩展包** Bundles是Laravel的组件包系统。Laravel的Bundles已填充了相当多的功能，可以很容易地添加到您的应用程序。您可以Artisan命令行工具来自动安装它们。[The Laravel Bundle Repository](http://bundles.laravel.com/)
+- **The Eloquent ORM** ELOQUENT ORM是最先进的PHP ActiveRecord实现。ELOQUENT ORM拥有所有ActiveRecord的便利，你可以完全控制你的数据。ELOQUENT ORM支持Fluent query-builder的所有原生方法.
+- **Application Logic** 在您的应用程序可以使用控制器，或直接进入路由的声明语法,类似Sinatra的框架，可以实现应用程序逻辑。 Laravel的设计与开发人员提供他们所需要的灵活性，方便创造从非常小的网站到大型的企业应用程序。
+- **Reverse Routing反向路由** 反向路由使您可以创建链接到已命名路由规则上。创建链接时使用路由的名称,Laravel会自动插入正确的URI。这可以让你改变你的路由,在稍后的时间Laravel将更新站点范围内的所有相关链接。
+- **Restful Controllers** Restful Controllers是一个可选的方式,分离你的请求逻辑。在一个登录的例子中,你控制器里get_login()的动作将显示登陆页,你控制器的post_login()动作会接受的登陆，验证，和或者重定向到其他页面。
 - **Class Auto Loading** keeps you from having to maintain an autoloader configuration and from loading unnecessary components when they won't be used. Want to use a library or model?  Don't bother loading it, just use it. Laravel will handle the rest.
-- **View Composers** are blocks of code that can be run when a view is loaded. A good example of this would be a blog side-navigation view that contains a list of random blog posts. Your composer would contain the logic to load the blog posts so that all you have to do i load the view and it's all ready for you. This keeps you from having to make sure that your controllers load the a bunch of data from your models for views that are unrelated to that method's page content.
+- **View Composers** View Composers是一个当视图中可以运行的代码块. 一个博客的随机博客文章列表是一个很好的例子。Composers将包含逻辑加载的博客文章，这一切都为你准备好了,只要调用您的模型即可
 - **The IoC container** (Inversion of Control) gives you a method for generating new objects and optionally instantiating and referencing singletons. IoC means that you'll rarely ever need to bootstrap any external libraries. It also means that you can access these objects from anywhere in your code without needing to deal with an inflexible monolithic structure. 
 - **Migrations** are version control for your database schemas and they are directly integrated into Laravel. You can both generate and run migrations using the "Artisan" command-line utility. Once another member makes schema changes you can update your local copy from the repository and run migrations. Now you're up to date, too!
 - **Unit-Testing** is an important part of Laravel. Laravel itself sports hundreds of tests to help ensure that new changes don't unexpectedly break anything. This is one of the reasons why Laravel is widely considered to have some of the most stable releases in the industry.  Laravel also makes it easy for you to write unit-tests for your own code.  You can then run tests with the "Artisan" command-line utility.
