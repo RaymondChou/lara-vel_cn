@@ -32,4 +32,8 @@
 	{{ HTML::script(URL::$base.'/laravel/js/prettify.js') }}
 	{{ HTML::script(URL::$base.'/laravel/js/scroll.js') }}
 </body>
+<script type="text/javascript">
+    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fcbd85e238f6c8a54c657bdd653d81015' type='text/javascript'%3E%3C/script%3E"));
+</script>
 </html>
