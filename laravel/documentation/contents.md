@@ -1,5 +1,6 @@
 ### 简介
 - [Laravel 概述](/docs/home)
+- [Laravel 目录结构分析](/docs/path)
 - [Change Log](/docs/changes)
 - [安装与设置](/docs/install)
 	- [Requirements](/docs/install#requirements)
