@@ -1,26 +1,26 @@
-# Installation & Setup
+# 安装与设置
 
-## Contents
+## 目录
 
-- [Requirements](#requirements)
-- [Installation](#installation)
-- [Server Configuration](#server-configuration)
-- [Basic Configuration](#basic-configuration)
-- [Environments](#environments)
-- [Cleaner URLs](#cleaner-urls)
+- [系统需求](#requirements)
+- [安装说明](#installation)
+- [服务器配置](#server-configuration)
+- [基本配置](#basic-configuration)
+- [环境说明](#environments)
+- [URL重写](#cleaner-urls)
 
 <a name="requirements"></a>
-## Requirements
+## 系统需求
 
-- Apache, nginx, or another compatible web server.
-- Laravel takes advantage of the powerful features that have become available in PHP 5.3. Consequently, PHP 5.3 is a requirement.
-- Laravel uses the [FileInfo library](http://php.net/manual/en/book.fileinfo.php) to detect files' mime-types. This is included by default with PHP 5.3. However, Windows users may need to add a line to their php.ini file before the Fileinfo module is enabled. For more information check out the [installation / configuration details on PHP.net](http://php.net/manual/en/fileinfo.installation.php).
-- Laravel uses the [Mcrypt library](http://php.net/manual/en/book.mcrypt.php) for encryption and hash generation. Mcrypt typically comes pre-installed. If you can't find Mcrypt in the output of phpinfo() then check the vendor site of your LAMP installation or check out the [installation / configuration details on PHP.net](http://php.net/manual/en/book.mcrypt.php).
+- Apache, nginx, 或其他兼容的WEB服务器环境。
+- Laravel 充分利用了 PHP 5.3 之后版本的强大特性。 因此, 需要PHP 5.3 以上版本。
+- Laravel 使用 [FileInfo library](http://php.net/manual/en/book.fileinfo.php) 来检测 mime-types 文件。 这个是PHP 5.3默认包含的功能。但是, Windows 系统用户可能需要向 php.ini 文件中添加一行配置才能将 Fileinfo 启用。 更多信息请参见 [installation / configuration details on PHP.net](http://php.net/manual/en/fileinfo.installation.php)。
+- Laravel 使用 [Mcrypt library](http://php.net/manual/en/book.mcrypt.php) 来进行加密和哈希生成。 Mcrypt 通常是预安装好的。 如果你使用 phpinfo() 显示的输出结果中找不到 Mcrypt , 那么检查你LAMP服务的主机供应商网站或参见 [installation / configuration details on PHP.net](http://php.net/manual/en/book.mcrypt.php)。
 
 <a name="installation"></a>
 ## Installation
 
-1. [Download Laravel](http://laravel.com/download)
+1. [下载 Laravel](http://laravel.com/download)
 2. Extract the Laravel archive and upload the contents to your web server.
 3. Set the value of the **key** option in the **config/application.php** file to a random, 32 character string.
 4. Verify that the `storage/views` directory is writable.
