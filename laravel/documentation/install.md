@@ -18,30 +18,30 @@
 - Laravel 使用 [Mcrypt library](http://php.net/manual/en/book.mcrypt.php) 来进行加密和哈希生成。 Mcrypt 通常是预安装好的。 如果你使用 phpinfo() 显示的输出结果中找不到 Mcrypt , 那么检查你LAMP服务的主机供应商网站或参见 [installation / configuration details on PHP.net](http://php.net/manual/en/book.mcrypt.php)。
 
 <a name="installation"></a>
-## Installation
+## 安装说明
 
 1. [下载 Laravel](http://laravel.com/download)
-2. Extract the Laravel archive and upload the contents to your web server.
-3. Set the value of the **key** option in the **config/application.php** file to a random, 32 character string.
-4. Verify that the `storage/views` directory is writable.
-5. Navigate to your application in a web browser.
+2. 解压 Laravel 压缩包，上传内容到你的WEB服务器上。
+3. 将 **config/application.php** 文件中的 **key** 项目设置为一个随机的、长度为32字节的字符串。
+4. 确认 `storage/views` 目录是可写的。
+5. 从浏览器中定位到你的应用。
 
-If all is well, you should see a pretty Laravel splash page. Get ready, there is lots more to learn!
+如果以上步骤都做好了 , 那么你应该看到一个可爱的 Laravel 引导页。准备好 , 这里有更多可学的东西！
 
-### Extra Goodies
+### 附加组件
 
-Installing the following goodies will help you take full advantage of Laravel, but they are not required:
+安装以下组件能帮助你充分利用 Laravel 的优势 , 但它们并不是必需的:
 
-- SQLite, MySQL, PostgreSQL, or SQL Server PDO drivers.
-- Memcached or APC.
+- SQLite, MySQL, PostgreSQL, 或 SQL Server PDO drivers.
+- Memcached 或 APC.
 
-### Problems?
+### 安装出现了问题?
 
-If you are having problems installing, try the following:
+如果你在安装过程中遇到了问题，请尝试以下步骤:
 
-- Make sure the **public** directory is the document root of your web server. (see: Server Configuration below)
-- If you are using mod_rewrite, set the **index** option in **application/config/application.php** to an empty string.
-- Verify that your storage folder and the folders within are writable by your web server.
+- 确保 **public** 目录是WEB服务器的文档根目录。 (见: 下文服务器配置)
+- 如果你在使用 mod_rewrite, 设置  **application/config/application.php** 中 **index** 的值为空字符串。
+- 确认你WEB服务器的存储目录和其中的子目录都是可写的。
 
 <a name="server-configuration"></a>
 ## Server Configuration
