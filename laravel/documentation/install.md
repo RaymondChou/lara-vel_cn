@@ -15,7 +15,7 @@
 - Apache, nginx, 或其他兼容的WEB服务器环境。
 - Laravel 充分利用了 PHP 5.3 之后版本的强大特性。 因此, 需要PHP 5.3 以上版本。
 - Laravel 使用 [FileInfo library](http://php.net/manual/en/book.fileinfo.php) 来检测 mime-types 文件。 这个是PHP 5.3默认包含的功能。但是, Windows 系统用户可能需要向 php.ini 文件中添加一行配置才能将 Fileinfo 启用。 更多信息请参见 [installation / configuration details on PHP.net](http://php.net/manual/en/fileinfo.installation.php)。
-- Laravel 使用 [Mcrypt library](http://php.net/manual/en/book.mcrypt.php) 来进行加密和哈希生成。 Mcrypt 通常是预安装好的。 如果你使用 phpinfo() 显示的输出结果中找不到 Mcrypt , 那么检查你LAMP服务的主机供应商网站或参见 [installation / configuration details on PHP.net](http://php.net/manual/en/book.mcrypt.php)。
+- Laravel 使用 [Mcrypt library](http://php.net/manual/en/book.mcrypt.php) 来进行加密和哈希生成。 Mcrypt 通常是预安装好的。 如果你使用 phpinfo() 显示的输出结果中找不到 Mcrypt , 那么检查你的主机供应商是否安装了LAMP的Mcrypt组件 , 或参见 [installation / configuration details on PHP.net](http://php.net/manual/en/book.mcrypt.php)。
 
 <a name="installation"></a>
 ## 安装说明
