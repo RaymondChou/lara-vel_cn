@@ -44,27 +44,27 @@
 - 确认你WEB服务器的存储目录和其中的子目录都是可写的。
 
 <a name="server-configuration"></a>
-## Server Configuration
+## 服务器配置
 
-Like most web-development frameworks, Laravel is designed to protect your application code, bundles, and local storage by placing only files that are necessarily public in the web server's DocumentRoot. This prevents some types of server misconfiguration from making your code (including database passwords and other configuration data) accessible through the web server. It's best to be safe. 
+和众多WEB开发框架一样 , Laravel 是设计用来保护你的应用代码 , 封装 , 公开在WEB服务器文档文件夹中必须用物理文件的本地存储。 它能阻止你在WEB服务器上可访问的代码 (包括数据库密码和其他配置数据) 被篡改. 所以说，这是一个安全性非常高的框架。
 
-In this example let's imagine that we installed Laravel to the directory **/Users/JonSnow/Sites/MySite**.
+这是一个演示，让我们想像一下，我们将 Laravel 安装到目录 **/Users/JonSnow/Sites/MySite**。
 
-A very basic example of an Apache VirtualHost configuration for MySite might look like this.
+一个非常基本的 Apache 虚拟主机网站配置应该看上去像这个样子：
 
 	<VirtualHost *:80>
 		DocumentRoot /Users/JonSnow/Sites/MySite/public
 		ServerName mysite.dev
 	</VirtualHost>
 
-Notice that while we installed to **/Users/JonSnow/Sites/MySite** our DocumentRoot points to **/Users/JonSnow/Sites/MySite/public**.
+注意，当我们安装的目录是 **/Users/JonSnow/Sites/MySite** 文档根目录指向的是 **/Users/JonSnow/Sites/MySite/public**。
 
 While pointing the DocumentRoot to the public folder is a commonly used best-practice, it's possible that you may need to use Laravel on a host that does not allow you to update your DocumentRoot. A collection of algorithms to circumvent this need can be found [on the Laravel forums.](http://forums.laravel.com/viewtopic.php?id=1258)
 
 <a name="basic-configuration"></a>
-## Basic Configuration
+## 基本配置
 
-All of the configuration provided are located in your applications config/ directory. We recommend that you read through these files just to get a basic understanding of the options available to you. Pay special attention to the **application/config/application.php** file as it contains the basic configuration options for your application.
+所有提供的配置文件都位于你应用的 config/ 目录。 我们推荐你先阅读一下这些文件，以获得对可用配置项的简单了解。 特别注意下 **application/config/application.php** 文件，因为它包括你应用的基础设置项。
 
 It's **extremely** important that you change the **application key** option before working on your site. This key is used throughout the framework for encryption, hashing, etc. It lives in the **config/application.php** file and should be set to a random, 32 character string. A standards-compliant application key can be automatically generated using the Artisan command-line utility.  More information can be found in the [Artisan command index](/docs/artisan/commands).
 
