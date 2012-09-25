@@ -59,19 +59,19 @@
 
 注意，当我们安装的目录是 **/Users/JonSnow/Sites/MySite** 文档根目录指向的是 **/Users/JonSnow/Sites/MySite/public**。
 
-While pointing the DocumentRoot to the public folder is a commonly used best-practice, it's possible that you may need to use Laravel on a host that does not allow you to update your DocumentRoot. A collection of algorithms to circumvent this need can be found [on the Laravel forums.](http://forums.laravel.com/viewtopic.php?id=1258)
+当文档根目录指向公开的目录是最优方法。当然也有可能你需要在不允许更新文档根目录的主机上使用 Laravel . 一系列的算法可以用来避免问题的发生，参见 [Laravel 官方论坛.](http://forums.laravel.com/viewtopic.php?id=1258)
 
 <a name="basic-configuration"></a>
 ## 基本配置
 
 所有提供的配置文件都位于你应用的 config/ 目录。 我们推荐你先阅读一下这些文件，以获得对可用配置项的简单了解。 特别注意下 **application/config/application.php** 文件，因为它包括你应用的基础设置项。
 
-It's **extremely** important that you change the **application key** option before working on your site. This key is used throughout the framework for encryption, hashing, etc. It lives in the **config/application.php** file and should be set to a random, 32 character string. A standards-compliant application key can be automatically generated using the Artisan command-line utility.  More information can be found in the [Artisan command index](/docs/artisan/commands).
+**极其重要** 最好在网站上线之前修改掉配置文件里的 **application key** 。 这个键值用于整个框架之内的加密算法、哈希算法等。它位于 **config/application.php** 文件，并且最好设置未随机的32位字符串。 一个符合规范的应用密钥(Key)最好是使用专门的命令行工具自动生成的。更多关于命令行工具的信息请参考 [Artisan command index](/docs/artisan/commands).
 
-> **Note:** If you are using mod_rewrite, you should set the index option to an empty string.
+> **注意:** 如果你使用了 mod_rewrite, 你需要把 **index option** 设置为空字符串。
 
 <a name="environments"></a>
-## Environments
+## 环境说明
 
 Most likely, the configuration options you need for local development are not the same as the options you need on your production server. Laravel's default environment handling mechanism is URL based, which will make setting up environments a breeze. Pop open the `paths.php` file in the root of your Laravel installation. You should see an array like this:
 
@@ -96,7 +96,7 @@ In this example, the local **URL** option will override the **URL** option in **
 Isn't it easy? Of course, you are free to create as many environments as you wish!
 
 <a name="cleaner-urls"></a>
-## Cleaner URLs
+## URL重写
 
 Most likely, you do not want your application URLs to contain "index.php". You can remove it using HTTP rewrite rules. If you are using Apache to serve your application, make sure to enable mod_rewrite and create a **.htaccess** file like this one in your **public** directory:
 
