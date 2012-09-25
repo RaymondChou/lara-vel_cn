@@ -44,36 +44,36 @@
 - 确认你WEB服务器的存储目录和其中的子目录都是可写的。
 
 <a name="server-configuration"></a>
-## Server Configuration
+## 服务器配置
 
-Like most web-development frameworks, Laravel is designed to protect your application code, bundles, and local storage by placing only files that are necessarily public in the web server's DocumentRoot. This prevents some types of server misconfiguration from making your code (including database passwords and other configuration data) accessible through the web server. It's best to be safe. 
+和众多WEB开发框架一样 , Laravel 是设计用来保护你的应用代码 , 封装 , 公开在WEB服务器文档文件夹中必须用物理文件的本地存储。 它能阻止你在WEB服务器上可访问的代码 (包括数据库密码和其他配置数据) 被篡改. 所以说，这是一个安全性非常高的框架。
 
-In this example let's imagine that we installed Laravel to the directory **/Users/JonSnow/Sites/MySite**.
+这是一个演示，让我们想像一下，我们将 Laravel 安装到目录 **/Users/JonSnow/Sites/MySite**。
 
-A very basic example of an Apache VirtualHost configuration for MySite might look like this.
+一个非常基本的 Apache 虚拟主机网站配置应该看上去像这个样子：
 
 	<VirtualHost *:80>
 		DocumentRoot /Users/JonSnow/Sites/MySite/public
 		ServerName mysite.dev
 	</VirtualHost>
 
-Notice that while we installed to **/Users/JonSnow/Sites/MySite** our DocumentRoot points to **/Users/JonSnow/Sites/MySite/public**.
+注意，当我们安装的目录是 **/Users/JonSnow/Sites/MySite** 文档根目录指向的是 **/Users/JonSnow/Sites/MySite/public**。
 
-While pointing the DocumentRoot to the public folder is a commonly used best-practice, it's possible that you may need to use Laravel on a host that does not allow you to update your DocumentRoot. A collection of algorithms to circumvent this need can be found [on the Laravel forums.](http://forums.laravel.com/viewtopic.php?id=1258)
+当文档根目录指向公开的目录是最优方法。当然也有可能你需要在不允许更新文档根目录的主机上使用 Laravel . 一系列的算法可以用来避免问题的发生，参见 [Laravel 官方论坛.](http://forums.laravel.com/viewtopic.php?id=1258)
 
 <a name="basic-configuration"></a>
-## Basic Configuration
+## 基本配置
 
-All of the configuration provided are located in your applications config/ directory. We recommend that you read through these files just to get a basic understanding of the options available to you. Pay special attention to the **application/config/application.php** file as it contains the basic configuration options for your application.
+所有提供的配置文件都位于你应用的 config/ 目录。 我们推荐你先阅读一下这些文件，以获得对可用配置项的简单了解。 特别注意下 **application/config/application.php** 文件，因为它包括你应用的基础设置项。
 
-It's **extremely** important that you change the **application key** option before working on your site. This key is used throughout the framework for encryption, hashing, etc. It lives in the **config/application.php** file and should be set to a random, 32 character string. A standards-compliant application key can be automatically generated using the Artisan command-line utility.  More information can be found in the [Artisan command index](/docs/artisan/commands).
+**极其重要** 最好在网站上线之前修改掉配置文件里的 **application key** 。 这个键值用于整个框架之内的加密算法、哈希算法等。它位于 **config/application.php** 文件，并且最好设置未随机的32位字符串。 一个符合规范的应用密钥(Key)最好是使用专门的命令行工具自动生成的。更多关于命令行工具的信息请参考 [Artisan command index](/docs/artisan/commands).
 
-> **Note:** If you are using mod_rewrite, you should set the index option to an empty string.
+> **注意:** 如果你使用了 mod_rewrite, 你需要把 **index option** 设置为空字符串。
 
 <a name="environments"></a>
-## Environments
+## 环境说明
 
-Most likely, the configuration options you need for local development are not the same as the options you need on your production server. Laravel's default environment handling mechanism is URL based, which will make setting up environments a breeze. Pop open the `paths.php` file in the root of your Laravel installation. You should see an array like this:
+多数情况，你本地开发环境的配置选项和你实际产品服务器需要的配置是不一样的。 Laravel默认的环境处理机制是基于URL的, 设置好环境是轻而易举的事情。 打开Laravel安装根目录下的 `paths.php` 文件，你将会看到这么样的一个数组：
 
 	$environments = array(
 
@@ -81,9 +81,9 @@ Most likely, the configuration options you need for local development are not th
 
 	);
 
-This tells Laravel that any URLs beginning with "localhost" or ending with ".dev" should be considered part of the "local" environment.
+这告诉给 Laravel 所有以 "localhost" 开头或者以 ".dev" 结尾的URL应该被认定成 "local" 环境。
 
-Next, create an **application/config/local** directory. Any files and options you place in this directory will override the options in the base **application/config** directory. For example, you may wish to create an **application.php** file within your new **local** configuration directory:
+其次， 创建一个 **application/config/local** 目录。 所有你放置到这个目录的文件和选项会重写 **application/config** 目录中的基本设置。 比如 , 你可能希望创建一个 **application.php** 文件放到你的新 **local** 配置目录:
 
 	return array(
 
@@ -91,14 +91,14 @@ Next, create an **application/config/local** directory. Any files and options yo
 
 	);
 
-In this example, the local **URL** option will override the **URL** option in **application/config/application.php**. Notice that you only need to specify the options you wish to override.
+在这个例子中，**application/config/application.php** 中的 **URL** 将会被 local中的 **URL** 重写。 注意，你只需要声明你希望重写的选项。
 
-Isn't it easy? Of course, you are free to create as many environments as you wish!
+是不是很简单？ 当然，你也可以自由创建多个环境，只要你想的话！
 
 <a name="cleaner-urls"></a>
-## Cleaner URLs
+## URL重写
 
-Most likely, you do not want your application URLs to contain "index.php". You can remove it using HTTP rewrite rules. If you are using Apache to serve your application, make sure to enable mod_rewrite and create a **.htaccess** file like this one in your **public** directory:
+多半情况, 你不希望你的访问路径中出现 "index.php"。 你可以通过HTTP rewrite 规则将其去掉。 如果你使用的是Apache服务器环境，确保已经开启了 enable mod_rewrite 并且创建了 **.htaccess** 文件到你的 **public** 目录:
 
 	<IfModule mod_rewrite.c>
 	     RewriteEngine on
@@ -109,7 +109,7 @@ Most likely, you do not want your application URLs to contain "index.php". You c
 	     RewriteRule ^(.*)$ index.php/$1 [L]
 	</IfModule>
 
-Is the .htaccess file above not working for you? Try this one:
+这个.htaccess文件在你的环境中没有效果? 那试试这个:
 
 	Options +FollowSymLinks
 	RewriteEngine on
@@ -119,6 +119,6 @@ Is the .htaccess file above not working for you? Try this one:
 
 	RewriteRule . index.php [L]
 
-After setting up HTTP rewriting, you should set the **index** configuration option in **application/config/application.php** to an empty string.
+设置好 HTTP rewriting之后 , 你应该设置 **application/config/application.php** 中的 **index** 值为空字符串。
 
-> **Note:** Each web server has a different method of doing HTTP rewrites, and may require a slightly different .htaccess file.
+> **注意:** 每个WEB服务器都有一个不同的方法去处理 HTTP rewrites , 并且可能需要一个稍微有些区别的 .htaccess 文件。
