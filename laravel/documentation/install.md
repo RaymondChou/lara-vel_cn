@@ -73,7 +73,7 @@
 <a name="environments"></a>
 ## 环境说明
 
-Most likely, the configuration options you need for local development are not the same as the options you need on your production server. Laravel's default environment handling mechanism is URL based, which will make setting up environments a breeze. Pop open the `paths.php` file in the root of your Laravel installation. You should see an array like this:
+多数情况，你本地开发环境的配置选项和你实际产品服务器需要的配置是不一样的。 Laravel默认的环境处理机制是基于URL的, 设置好环境是轻而易举的事情。 打开Laravel安装根目录下的 `paths.php` 文件，你将会看到这么样的一个数组：
 
 	$environments = array(
 
@@ -81,9 +81,9 @@ Most likely, the configuration options you need for local development are not th
 
 	);
 
-This tells Laravel that any URLs beginning with "localhost" or ending with ".dev" should be considered part of the "local" environment.
+这告诉给 Laravel 所有以 "localhost" 开头或者以 ".dev" 结尾的URL应该被认定成 "local" 环境。
 
-Next, create an **application/config/local** directory. Any files and options you place in this directory will override the options in the base **application/config** directory. For example, you may wish to create an **application.php** file within your new **local** configuration directory:
+其次， 创建一个 **application/config/local** 目录。 所有你放置到这个目录的文件和选项会重写 **application/config** 目录中的基本设置。 比如 , 你可能希望创建一个 **application.php** 文件放到你的新 **local** 配置目录:
 
 	return array(
 
@@ -91,14 +91,14 @@ Next, create an **application/config/local** directory. Any files and options yo
 
 	);
 
-In this example, the local **URL** option will override the **URL** option in **application/config/application.php**. Notice that you only need to specify the options you wish to override.
+在这个例子中，**application/config/application.php** 中的 **URL** 将会被 local中的 **URL** 重写。 注意，你只需要声明你希望重写的选项。
 
-Isn't it easy? Of course, you are free to create as many environments as you wish!
+是不是很简单？ 当然，你也可以自由创建多个环境，只要你想的话！
 
 <a name="cleaner-urls"></a>
 ## URL重写
 
-Most likely, you do not want your application URLs to contain "index.php". You can remove it using HTTP rewrite rules. If you are using Apache to serve your application, make sure to enable mod_rewrite and create a **.htaccess** file like this one in your **public** directory:
+多半情况, 你不希望你的访问路径中出现 "index.php"。 你可以通过HTTP rewrite 规则将其去掉。 如果你使用的是Apache服务器环境，确保已经开启了 enable mod_rewrite 并且创建了 **.htaccess** 文件到你的 **public** 目录:
 
 	<IfModule mod_rewrite.c>
 	     RewriteEngine on
@@ -109,7 +109,7 @@ Most likely, you do not want your application URLs to contain "index.php". You c
 	     RewriteRule ^(.*)$ index.php/$1 [L]
 	</IfModule>
 
-Is the .htaccess file above not working for you? Try this one:
+这个.htaccess文件在你的环境中没有效果? 那试试这个:
 
 	Options +FollowSymLinks
 	RewriteEngine on
@@ -119,6 +119,6 @@ Is the .htaccess file above not working for you? Try this one:
 
 	RewriteRule . index.php [L]
 
-After setting up HTTP rewriting, you should set the **index** configuration option in **application/config/application.php** to an empty string.
+设置好 HTTP rewriting之后 , 你应该设置 **application/config/application.php** 中的 **index** 值为空字符串。
 
-> **Note:** Each web server has a different method of doing HTTP rewrites, and may require a slightly different .htaccess file.
+> **注意:** 每个WEB服务器都有一个不同的方法去处理 HTTP rewrites , 并且可能需要一个稍微有些区别的 .htaccess 文件。
