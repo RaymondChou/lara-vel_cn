@@ -6,31 +6,39 @@
 	<title>Laravel 中文手册 - 巨匠级PHP开发框架</title>
 	<meta name="viewport" content="width=device-width">
 
-	{{ HTML::style(URL::$base.'/laravel/css/style.css') }}
+	{{ HTML::style(URL::$base.'/laravel/css/style1.css') }}
 	{{ HTML::script(URL::$base.'/laravel/js/modernizr-2.5.3.min.js') }}
 </head>
 <body onload="prettyPrint()">
 	<div class="wrapper">
 		<header>
-			<h1>Laravel</h1>
-			<h2>巨匠级PHP开发框架</h2>
-            <a href="http://laravel-cn.com"><-返回Laravel中国首页</a>
-
-			<p class="intro-text">
-			</p>
+			<div class="container">
+				<h1>{{ HTML::link('http://laravel.com' , 'Laravel' , array('title'=>'点击去往-英文官方网站')) }}</h1>
+				<h2>巨匠级PHP开发框架</h2>
+				{{ HTML::link(URL::$base , '<-返回Laravel中国首页' , array('title'=>'返回Laravel中国首页' , 'style'=>'float:right;padding-top:40px;')) }}
+				<p class="intro-text">
+				</p>
+			</div>
 		</header>
-		<div role="main" class="main">
-			<aside class="sidebar">
-				{{ $sidebar }}
-			</aside>
-			<div class="content">
-				@yield('content')
+		<div class="mid-content">
+			<div role="main" class="container main">
+				<div class="row">
+					<aside id="docs-sidebar" class="sidebar docs span3">
+						{{ $sidebar }}
+					</aside>
+					<div class="content docs span9">
+						<div class="well">
+							@yield('content')
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
 	{{ HTML::script('http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js') }}
 	{{ HTML::script(URL::$base.'/laravel/js/prettify.js') }}
 	{{ HTML::script(URL::$base.'/laravel/js/scroll.js') }}
+	{{ HTML::script(URL::$base.'/laravel/js/main.min.js') }}
 </body>
 <script type="text/javascript">
     var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
