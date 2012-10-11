@@ -55,7 +55,7 @@
                 <li><a href="#download">下载<br /><span></span></a></li>
                 <li><a href="#contact">关于<br /><span></span></a></li>
                 <li><a href="docs">中文手册<br /><span></span></a></li>
-                <li><a href="http://wiki.ledbk.com/?/topic/Laravel" target="_blank">中文社区<br /><span></span></a></li>
+                <li><a href="http://bbs.laravel-cn.com" target="_blank">中文社区<br /><span></span></a></li>
             </ul>
         </nav>
     </div><!-- .container -->
