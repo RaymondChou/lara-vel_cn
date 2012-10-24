@@ -1,30 +1,30 @@
-# Managing Assets
+# 管理资源(Assets)
 
-## Contents
+## 目录
 
-- [Registering Assets](#registering-assets)
-- [Dumping Assets](#dumping-assets)
-- [Asset Dependencies](#asset-dependencies)
-- [Asset Containers](#asset-containers)
-- [Bundle Assets](#bundle-assets)
+- [注册资源](#registering-assets)
+- [使用资源](#dumping-assets)
+- [资源依赖](#asset-dependencies)
+- [资源容器](#asset-containers)
+- [组件资源](#bundle-assets)
 
 <a name="registering-assets"></a>
-## Registering Assets
+## 注册资源
 
-The **Asset** class provides a simple way to manage the CSS and JavaScript used by your application. To register an asset just call the **add** method on the **Asset** class:
+**Asset**类提供一种简单地管理你的应用使用的CSS和JavaScript。只需要调用**Asset**类的**add**方法即可注册一个资源：
 
-#### Registering an asset:
+#### 注册一个资源：
 
 	Asset::add('jquery', 'js/jquery.js');
 
-The **add** method accepts three parameters. The first is the name of the asset, the second is the path to the asset relative to the **public** directory, and the third is a list of asset dependencies (more on that later). Notice that we did not tell the method if we were registering JavaScript or CSS. The **add** method will use the file extension to determine the type of file we are registering.
+**add**方法接受3个参数，每一个是资源的名称，第二个是资源相对**public**目录的路径，第三个是一个资源依赖的列表。注意，我们并没有指定我们是要注册JS还是CSS，**add**方法会根据文件扩展名来判断我们注册的文件类型。
 
 <a name="dumping-assets"></a>
-## Dumping Assets
+## 使用资源
 
-When you are ready to place the links to the registered assets on your view, you may use the **styles** or **scripts** methods:
+当你准备把资源插入到你的视图的时候，你可能需要使用**styles**或**scripts**方法：
 
-#### Dumping assets into a view:
+#### 使用资源到视图：
 
 	<head>
 		<?php echo Asset::styles(); ?>
@@ -32,42 +32,42 @@ When you are ready to place the links to the registered assets on your view, you
 	</head>
 
 <a name="asset-dependencies"></a>
-## Asset Dependencies
+## 资源依赖
 
-Sometimes you may need to specify that an asset has dependencies. This means that the asset requires other assets to be declared in your view before it can be declared. Managing asset dependencies couldn't be easier in Laravel. Remember the "names" you gave to your assets? You can pass them as the third parameter to the **add** method to declare dependencies:
+有时你需要指定一个资源依赖其它资源，这意味着资源需要别的资源在视力中先被申明。只要你记住资源的名称，指定依赖就相当简单，你可以把被依赖的资源的名称写入**add**的第三个参数来申明依赖：
 
-#### Registering a bundle that has dependencies:
+#### 注册一个含有依赖的资源：
 
 	Asset::add('jquery-ui', 'js/jquery-ui.js', 'jquery');
 
-In this example, we are registering the **jquery-ui** asset, as well as specifying that it is dependent on the **jquery** asset. Now, when you place the asset links on your views, the jQuery asset will always be declared before the jQuery UI asset. Need to declare more than one dependency? No problem:
+在这个例子中，我们注册了叫**jquety-ui**的资源，也指定了他依赖于**jquery**，现在当你把资源连接到你的视图时，jQuery的资源总是先于jQuery UI的资源申明，当需要定义多个依赖时：
 
-#### Registering an asset that has multiple dependencies:
+#### 注册一个含有多个依赖的资源：
 
 	Asset::add('jquery-ui', 'js/jquery-ui.js', array('first', 'second'));
 
 <a name="asset-containers"></a>
-## Asset Containers
+## 资源容器
 
-To increase response time, it is common to place JavaScript at the bottom of HTML documents. But, what if you also need to place some assets in the head of your document? No problem. The asset class provides a simple way to manage asset **containers**. Simply call the **container** method on the Asset class and mention the container name. Once you have a container instance, you are free to add any assets you wish to the container using the same syntax you are used to:
+为了提高反应速度，把JavaScript放在HTML文档的最后是很常见的，但如果你总需要在文档的头部放入资源怎么办呢？没问题，**Asset**类提供一个简单的管理资源容器的方法（**containers**）。只需要简单的调用Asset的**container**方法并指定容器名称，你就可以使用你熟悉的语法指定任意资源到容器：
 
-#### Retrieving an instance of an asset container:
+#### 获取一个资源容器的实例：
 
 	Asset::container('footer')->add('example', 'js/example.js');
 
-#### Dumping that assets from a given container:
+#### 从一个资源容器使用资源：
 
 	echo Asset::container('footer')->scripts();
 
 <a name="bundle-assets"></a>
-## Bundle Assets
+## 组件资源(Bundle Assets)
 
-Before learning how to conveniently add and dump bundle assets, you may wish to read the documentation on [creating and publishing bundle assets](/docs/bundles#bundle-assets).
+在你学习如何方便的增加和使用组件资源之前，你也许可以读一下[创建和发布组件资源](/docs/bundles#bundle-assets)。
 
-When registering assets, the paths are typically relative to the **public** directory. However, this is inconvenient when dealing with bundle assets, since they live in the **public/bundles** directory. But, remember, Laravel is here to make your life easier. So, it is simple to specify the bundle which the Asset container is managing.
+在注册资源时，一般资源路径都是相对**public**目录的，然而这对处理组件资源是显示不很方便了，因为它他们位于**public/bundles**目录。但是，请记住，Laravel的存在是使你的生活更容易，因此指定是何资源容器管理资源是非常简单的。
 
-#### Specifying the bundle the asset container is managing:
+#### 指定资源管容器指定的组件：
 
 	Asset::container('foo')->bundle('admin');
 
-Now, when you add an asset, you can use paths relative to the bundle's public directory. Laravel will automatically generate the correct full paths.
+现在，当你增加一个资源，你就可以使用相对于组件自己的public目录的相对目录来指定资源了。Laravel将为你生成正确的路径。

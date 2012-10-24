@@ -1,51 +1,51 @@
-# Views & Responses
+# 视图和响应(Response)
 
-## Contents
+## 目录
 
-- [The Basics](#the-basics)
-- [Binding Data To Views](#binding-data-to-views)
-- [Nesting Views](#nesting-views)
-- [Named Views](#named-views)
-- [View Composers](#view-composers)
-- [Redirects](#redirects)
-- [Redirecting With Flash Data](#redirecting-with-flash-data)
-- [Downloads](#downloads)
-- [Errors](#errors)
+- [基础](#the-basics)
+- [给视图绑定数据](#binding-data-to-views)
+- [内嵌视图(Nesting View)](#nesting-views)
+- [命名视图](#named-views)
+- [视图合成器](#view-composers)
+- [重定向](#redirects)
+- [Flash(临时)数据重定向](#redirecting-with-flash-data)
+- [下载](#downloads)
+- [错误](#errors)
 
 <a name="the-basics"></a>
-## The Basics
+## 基础
 
-Views contain the HTML that is sent to the person using your application. By separating your view from the business logic of your application, your code will be cleaner and easier to maintain.
+视图包含了发送到你的客户那里去的HTML代码。将视图和业务逻辑从你的程序中分享开来将使得你的代码更加清晰和易维护。
 
-All views are stored within the **application/views** directory and use the PHP file extension. The **View** class provides a simple way to retrieve your views and return them to the client. Let's look at an example!
+所有的视图都位于**application/views**目录中，并且使用PHP作为扩展名（.php）。**View**类提供了一个简单的获取并返回客户端的方法，让我们看个例子！
 
-#### Creating the view:
+#### 创建视图：
 
 	<html>
 		I'm stored in views/home/index.php!
 	</html>
 
-#### Returning the view from a route:
+#### 从一个路由返回视图：
 
 	Route::get('/', function()
 	{
 		return View::make('home.index');
 	});
 
-#### Returning the view from a controller:
+#### 从一个控制器返回视图：
 
 	public function action_index()
 	{
 		return View::make('home.index');
 	});
 
-#### Determining if a view exists:
+#### 判断一个视图是否存在：
 
 	$exists = View::exists('home.index');
 
-Sometimes you will need a little more control over the response sent to the browser. For example, you may need to set a custom header on the response, or change the HTTP status code. Here's how:
+有是你可能需要更进一步控制返回给浏览器的内容。例如，在内容之前发送一个自定义的header，或者改变HTTP状态(HTTP Status)的状态，请看下面：
 
-#### Returning a custom response:
+#### 返回一个自定义响应(Response)：
 
 	Route::get('/', function()
 	{
@@ -54,147 +54,147 @@ Sometimes you will need a little more control over the response sent to the brow
 		return Response::make('Hello World!', 200, $headers);
 	});
 
-#### Returning a custom response containing a view, with binding data:
+#### 返回一个自定义的包含绑定数据的视图：
 
 	return Response::view('home', array('foo' => 'bar'));
 
-#### Returning a JSON response:
+#### 返回一个JSON格式的响应：
 
 	return Response::json(array('name' => 'Batman'));
 
-#### Returning Eloquent models as JSON:
+#### 返回一个Eloquent模型的JSON数据：
 
 	return Response::eloquent(User::find(1));
 
 <a name="binding-data-to-views"></a>
-## Binding Data To Views
+## 给视图绑定数据
 
-Typically, a route or controller will request data from a model that the view needs to display. So, we need a way to pass the data to the view. There are several ways to accomplish this, so just pick the way that you like best!
+典型地，一个路由或控制器将从模型取得视图需要显示的数据，所以我们需要一种把数据传递给视图的方法。有几种方法可以完成这个任务，你可以选择你最喜欢的方式！
 
-#### Binding data to a view:
+#### 绑定数据到一个视图：
 
 	Route::get('/', function()
 	{
 		return View::make('home')->with('name', 'James');
 	});
 
-#### Accessing the bound data within a view:
+#### 在视图中访问被绑定的数据：
 
 	<html>
 		Hello, <?php echo $name; ?>.
 	</html>
 
-#### Chaining the binding of data to a view:
+#### 更改绑定到视图的数据：
 
 	View::make('home')
 		->with('name', 'James')
 		->with('votes', 25);
 
-#### Passing an array of data to bind data:
+#### 传递一个数组以绑定数据：
 
 	View::make('home', array('name' => 'James'));
 
-#### Using magic methods to bind data:
+#### 使用魔术方法绑定数据：
 
 	$view->name  = 'James';
 	$view->email = 'example@example.com';
 
-#### Using the ArrayAccess interface methods to bind data:
+#### 使用ArrayAccess接口绑定数据：
 
 	$view['name']  = 'James';
 	$view['email'] = 'example@example.com';
 
 <a name="nesting-views"></a>
-## Nesting Views
+## 内嵌视图
 
-Often you will want to nest views within views. Nested views are sometimes called "partials", and help you keep views small and modular.
+你可能经常需要在视图中内嵌视图，内嵌视图有时被称为“partials”（下面翻译为小视图，有的地方说是部件），它可以使视图相对较小而模块化。
 
-#### Binding a nested view using the "nest" method:
+#### 使用“nest”方法绑定内嵌视图到视图：
 
 	View::make('home')->nest('footer', 'partials.footer');
 
-#### Passing data to a nested view:
+#### 传递数组给内嵌视图：
 
 	$view = View::make('home');
 
 	$view->nest('content', 'orders', array('orders' => $orders));
 
-Sometimes you may wish to directly include a view from within another view. You can use the **render** helper function:
+有时，你需要直接在视图中包含另一个视图，你可以使用**render** helper方法来做：
 
-#### Using the "render" helper to display a view:
+#### 使用“render”方法绑定视图：
 
 	<div class="content">
 		<?php echo render('user.profile'); ?>
 	</div>
 
-It is also very common to have a partial view that is responsible for display an instance of data in a list. For example, you may create a partial view responsible for displaying the details about a single order. Then, for example, you may loop through an array of orders, rendering the partial view for each order. This is made simpler using the **render_each** helper:
+使用一个小视图显示一个列表的数据也是很常见的，例如，你建立了一个小视图来显示一个订单，然后在一个循环中使用此视图来输出每一个订单。使用**render_each**可以简化操作：
 
-#### Rendering a partial view for each item in an array:
+#### 使用小视图循环输出数组数据
 
 	<div class="orders">
 		<?php echo render_each('partials.order', $orders, 'order');
 	</div>
 
-The first argument is the name of the partial view, the second is the array of data, and the third is the variable name that should be used when each array item is passed to the partial view.
+第一个参数是小视图的名称，第二个参数是数据，第三个参数是将数据传递给小视图的变量名。
 
 <a name="named-views"></a>
-## Named Views
+## 命名视图
 
-Named views can help to make your code more expressive and organized. Using them is simple:
+命名视图可以使你的代码更具表现力也可以更好的被组织。使用也很简单：
 
-#### Registering a named view:
+#### 注册一个命名视图：
 
 	View::name('layouts.default', 'layout');
 
-#### Getting an instance of the named view:
+#### 获取一个命名视图：
 
 	return View::of('layout');
 
-#### Binding data to a named view:
+#### 绑定数据到一个命名视图：
 
 	return View::of('layout', array('orders' => $orders));
 
 <a name="view-composers"></a>
-## View Composers
+## 视图合成器
 
-Each time a view is created, its "composer" event will be fired. You can listen for this event and use it to bind assets and common data to the view each time it is created. A common use-case for this functionality is a side-navigation partial that shows a list of random blog posts. You can nest your partial view by loading it in your layout view. Then, define a composer for that partial. The composer can then query the posts table and gather all of the necessary data to render your view. No more random logic strewn about! Composers are typically defined in **application/routes.php**. Here's an example:
+每次你的视图被创建时，他的合成器(composer)事件就被触发，你可以监听这个事件来绑定一些资源和通用数据到每次创建的视图。一个常见的例子是，侧栏的显示随机博文列表的小视图，你可以将它内嵌到你的模板视图中，然后为之定义一个合成器。合成器之后可以查询博文数据库，得到视图所需信息。你不需要到处理随机的逻辑！视图合成器一般是定义在**application/routes.php**中，这里有个例子：
 
-#### Register a view composer for the "home" view:
+#### 为"home"视图定义一个视图合成器
 
 	View::composer('home', function($view)
 	{
 		$view->nest('footer', 'partials.footer');
 	});
 
-Now each time the "home" view is created, an instance of the View will be passed to the registered Closure, allowing you to prepare the view however you wish.
+现在每当“home”视图被创建时，一个此视图的实例将被传递给注册了的闭包，这将允许你任意准备你的视图。
 
-#### Register a composer that handles multiple views:
+#### 注册一个处理多个视图的合成器：
 
 	View::composer(array('home', 'profile'), function($view)
 	{
 		//
 	});
 
-> **Note:** A view can have more than one composer. Go wild!
+> **注意:** 一个视图可以有多个合成器，试试看吧。
 
 <a name="redirects"></a>
-## Redirects
+## 重定向
 
-It's important to note that both routes and controllers require responses to be returned with the 'return' directive. Instead of calling "Redirect::to()"" where you'd like to redirect the user. You'd instead use "return Redirect::to()". This distinction is important as it's different than most other PHP frameworks and it could be easy to accidentally overlook the importance of this practice.
+有一点非常重要，路由和控制器都必须通过"return"返回内容，因此当需要重定向时，你应该通过“return Redirect::to()”来重定向地址，而不能指望仅通过调用Redirect::to()达到重定向的效果。这一点跟其它框架不同，需要多加注意。
 
-#### Redirecting to another URI:
+#### 重定向到另一个URI
 
 	return Redirect::to('user/profile');
 
-#### Redirecting with a specific status:
+#### 重定向时带HTTP状态：
 
 	return Redirect::to('user/profile', 301);
 
-#### Redirecting to a secure URI:
+#### 重定向到一个安全链接（HTTPS）：
 
 	return Redirect::to_secure('user/profile');
 
-#### Redirecting to the root of your application:
+#### 重定向到根目录：
 
 	return Redirect::home();
 
@@ -202,59 +202,59 @@ It's important to note that both routes and controllers require responses to be 
 
 	return Redirect::back();
 
-#### Redirecting to a named route:
+#### 重定向到一个命名路由：
 
 	return Redirect::to_route('profile');
 
-#### Redirecting to a controller action:
+#### 重定向到一个控制器：
 
 	return Redirect::to_action('home@index');
 
-Sometimes you may need to redirect to a named route, but also need to specify the values that should be used instead of the route's URI wildcards. It's easy to replace the wildcards with proper values:
+有时你需要重定向到一个命名路由，但你也需要指定一些不同于路由接受的普通字符串（点位符？）的数据，可以简单的指定需要的数据：
 
-#### Redirecting to a named route with wildcard values:
+#### 重定向到一个命名路由并传入数据：
 
 	return Redirect::to_route('profile', array($username));
 
-#### Redirecting to an action with wildcard values:
+#### 重定向到控制器并传入数据：
 
 	return Redirect::to_action('user@profile', array($username));
 
 <a name="redirecting-with-flash-data"></a>
-## Redirecting With Flash Data
+## Flash(临时)数据重定向
 
-After a user creates an account or signs into your application, it is common to display a welcome or status message. But, how can you set the status message so it is available for the next request? Use the with() method to send flash data along with the redirect response.
+在创建一个用户账户之后，或者注册一个用户之后，通常会显示一个欢迎消息或状态消息。但该如何来设置消息的内容以保证下一次请求可以读取并显示呢？使用with方法可以重定向时发送临时数据。
 
 	return Redirect::to('profile')->with('status', 'Welcome Back!');
 
-You can access your message from the view with the Session get method:
+你可以在视图中通过Session::get来读取值。
 
 	$status = Session::get('status');
 
-*Further Reading:*
+*延伸阅读:*
 
-- *[Sessions](/docs/session/config)*
+- *[会话](/docs/session/config)*
 
 <a name="downloads"></a>
-## Downloads
+## 下载
 
-#### Sending a file download response:
+#### 返回一个文件下载响应：
 
 	return Response::download('file/path.jpg');
 
-#### Sending a file download and assigning a file name:
+#### 返回一个文件下载响应并指定文件名：
 
 	return Response::download('file/path.jpg', 'photo.jpg');
 
 <a name="errors"></a>
-## Errors
+## 错误
 
-To generating proper error responses simply specify the response code that you wish to return. The corresponding view stored in **views/error** will automatically be returned.
+发送错误消息只需要简单地使用Response的**error**方法并指定错误码。对应位于**views/error**的视图会被自动返回。
 
-#### Generating a 404 error response:
+#### 产生404错误：
 
 	return Response::error('404');
 
-#### Generating a 500 error response:
+#### 产生500错误：
 
 	return Response::error('500');
