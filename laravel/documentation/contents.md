@@ -65,7 +65,7 @@
 	- [Installing Bundles](/docs/bundles#installing-bundles)
 	- [Upgrading Bundles](/docs/bundles#upgrading-bundles)
 - [Class Auto Loading自动加载类](/docs/loading)
-- [Errors & Logging错误和日志](/docs/logging)
+- [错误与日志](/docs/logging)
 - [Runtime Configuration运行设置](/docs/config)
 - [Examining Requests请求](/docs/requests)
 - [Generating URLs](/docs/urls)
