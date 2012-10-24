@@ -98,10 +98,10 @@
 - [Configuration](/docs/session/config)
 - [Usage](/docs/session/usage)
 
-### Authentication权限控制
+### Auth(身份认证)
 
-- [Configuration](/docs/auth/config)
-- [Usage](/docs/auth/usage)
+- [配置Auth](/docs/auth/config)
+- [使用Auth](/docs/auth/usage)
 
 ### Artisan CLI命令行
 
