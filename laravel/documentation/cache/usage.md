@@ -1,50 +1,50 @@
-# Cache Usage
+# 缓存的用法
 
-## Contents
+## 目录
 
-- [Storing Items](#put)
-- [Retrieving Items](#get)
-- [Removing Items](#forget)
+- [存入项](#put)
+- [取出项](#get)
+- [删除项](#forget)
 
 <a name="put"></a>
-## Storing Items
+## 存入项
 
-Storing items in the cache is simple. Simply call the **put** method on the Cache class:
+在缓存中存入数据很简单, 直接在 Cache 类上调用 **put** 方法就行了:
 
 	Cache::put('name', 'Taylor', 10);
 
-The first parameter is the **key** to the cache item. You will use this key to retrieve the item from the cache. The second parameter is the **value** of the item. The third parameter is the number of **minutes** you want the item to be cached.
+第一个参数是缓存项的 **名称** , 你需要使用该名称来从缓存中取出对应项, 第二个参数是 缓存项的 **值** , 第三个参数是你希望该项被缓存的 **分钟** 数.
 
-You may also cache something "forever" if you do not want the cache to expire:
+你也可以 "永久" 缓存某些数据, 如果你不希望缓存过期的话:
 
 	Cache::forever('name', 'Taylor');
 
-> **Note:** It is not necessary to serialize objects when storing them in the cache.
+> **注意:** 如果你想要缓存对象的话, 你没必要序列化它们.
 
 <a name="get"></a>
-## Retrieving Items
+## 取出项
 
-Retrieving items from the cache is even more simple than storing them. It is done using the **get** method. Just mention the key of the item you wish to retrieve:
+从缓存中取出项甚至比存入项更简单. 使用 **get** 方法即可完成工作, 只需要给出你想要取出的项的名称就行了:
 
 	$name = Cache::get('name');
 
-By default, NULL will be returned if the cached item has expired or does not exist. However, you may pass a different default value as a second parameter to the method:
+默认情况下, 如果缓存的项已经过期或者不存在的话将会返回 NULL, 然而你也可以传递一个不同的默认返回值作为方法的第二个参数:
 
 	$name = Cache::get('name', 'Fred');
 
-Now, "Fred" will be returned if the "name" cache item has expired or does not exist.
+现在, 如果缓存中名为 "name" 的项已过期或者不存在, "Fred" 将会被返回. 
 
-What if you need a value from your database if a cache item doesn't exist? The solution is simple. You can pass a closure into the **get** method as a default value. The closure will only be executed if the cached item doesn't exist:
+想在缓存中的项不存在的时候再从数据库中取出值? 解决方法很简单, 你可以传递一个闭包给 **get** 方法作为一个默认返回值, 而这个闭包只会在缓存的项不存在的时候才被执行.
 
 	$users = Cache::get('count', function() {return DB::table('users')->count();});
 
-Let's take this example a step further. Imagine you want to retrieve the number of registered users for your application; however, if the value is not cached, you want to store the default value in the cache using the **remember** method:
+让我们更进一步探讨, 假设你想要取出你的应用的注册人数; 然而, 如果这个值没有被缓存, 你想要使用 **remember** 方法储存默认值到缓存中去:
 
 	$users = Cache::remember('count', function() {return DB::table('users')->count();}, 5);
 
-Let's talk through that example. If the **count** item exists in the cache, it will be returned. If it doesn't exist, the result of the closure will be stored in the cache for five minutes **and** be returned by the method. Slick, huh?
+我们来看看这个例子, 如果名为 **count** 的项存在于缓存中, 它的值会被返回. 如果它不存在, 闭包的结果将会被以5分钟的过期时间存入到缓存中去 **然后** 返回给方法, 一气呵成,不是吗?
 
-Laravel even gives you a simple way to determine if a cached item exists using the **has** method:
+Laravel 甚至为你准备了一种更简单的方法来检测缓存中是否存在指定项, 即使用 **has** 方法:
 
 	if (Cache::has('name'))
 	{
@@ -52,8 +52,8 @@ Laravel even gives you a simple way to determine if a cached item exists using t
 	}
 
 <a name="forget"></a>
-## Removing Items
+## 删除项
 
-Need to get rid of a cached item? No problem. Just mention the name of the item to the **forget** method:
+需要删除已缓存的项? 没问题, 只需要传递该项的名称给 **forget** 方法就行了:
 
 	Cache::forget('name');
