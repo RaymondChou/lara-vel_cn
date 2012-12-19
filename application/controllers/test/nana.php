@@ -8,7 +8,7 @@
 
 class Test_Nana_Controller extends Base_Controller{
 
-    public function json()
+    public function action_json()
     {
 
         return \Laravel\Response::json(array('name' => 'jiangyou','detail' => '酱油'),200);
