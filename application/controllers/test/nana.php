@@ -10,8 +10,10 @@ class Test_Nana_Controller extends Base_Controller{
 
     public function action_json()
     {
-
-        return \Laravel\Response::json(array('name' => 'jiangyou','detail' => '酱油'),200);
+        if(!Request::secure())
+            return \Laravel\Response::error(404);
+        else
+            return \Laravel\Response::json(array('name' => 'jiangyou','detail' => '酱油'),200);
     }
 
 }
