@@ -8,23 +8,10 @@
 
 class Test_Nana_Controller extends Base_Controller{
 
-    public function action_fluent()
+    public function json()
     {
 
-        $arctype = DB::table('archives')->get(array('id'));
-        foreach ($arctype as $user)
-        {
-            echo $user->id;
-        }
+        return \Laravel\Response::json(array('name' => 'jiangyou','detail' => '酱油'),200);
     }
 
-    public function action_eloquent()
-    {
-        $users = User::all();
-
-        foreach ($users as $user)
-        {
-            echo $user->id;
-        }
-    }
 }
